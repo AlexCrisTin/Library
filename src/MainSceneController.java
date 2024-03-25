@@ -41,7 +41,7 @@ public void Login(ActionEvent event) throws IOException{
     FXMLLoader loader = new FXMLLoader(getClass().getResource("MainScene.fxml"));
 
     root = loader.load();
-    Login login = loader.getController();
+    Scene2Login login = loader.getController();
     login.displayName(username);
     */
     root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
@@ -98,21 +98,15 @@ public void Delete(ActionEvent event) throws IOException{
     stage.show();
 }
 
-public void Borrow_ReturnBook(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("Borrow_return.fxml"));
+public void ReturnBook(ActionEvent event) throws IOException{
+    root = FXMLLoader.load(getClass().getResource("return.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
 }
 
-public void Borrow(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("Borrow_return1.fxml"));
-    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
-}
+
 
 public void CheckBook(ActionEvent event) throws IOException{
     root = FXMLLoader.load(getClass().getResource("CheckBook.fxml"));
