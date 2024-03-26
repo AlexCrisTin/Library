@@ -57,7 +57,7 @@ public void Logout(ActionEvent event) {
     Alert alert = new Alert(AlertType.CONFIRMATION);
     alert.setTitle("Logout?");
     alert.setHeaderText("Are you sure?");
-
+    alert.setContentText("Bye and see you again.");
     if(alert.showAndWait().get() == ButtonType.OK){
         stage = (Stage) scenePane.getScene().getWindow();
      
@@ -68,11 +68,18 @@ public void Logout(ActionEvent event) {
                     // Button Click
 
 public void btnExitClicked(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
-    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
+    Alert alert = new Alert(AlertType.CONFIRMATION);
+    alert.setTitle("Exit?");
+    alert.setHeaderText("Are you sure?");
+    alert.setContentText("Save everything before exit!!!");
+
+    if(alert.showAndWait().get() == ButtonType.OK){
+        root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
 public void btnCreateClicked(ActionEvent event) throws IOException{
     root = FXMLLoader.load(getClass().getResource("Create.fxml"));
@@ -120,6 +127,7 @@ public void Cancel(ActionEvent event) throws IOException {
     Alert alert = new Alert(AlertType.CONFIRMATION);
     alert.setTitle("Cancel?");
     alert.setHeaderText("Are you sure?");
+    alert.setContentText("Think again before cancel posting a book");
 
     if(alert.showAndWait().get() == ButtonType.OK){
         root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
