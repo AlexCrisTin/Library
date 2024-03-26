@@ -116,6 +116,20 @@ public void CheckBook(ActionEvent event) throws IOException{
     stage.show();
 }
 
+public void Cancel(ActionEvent event) throws IOException {
+    Alert alert = new Alert(AlertType.CONFIRMATION);
+    alert.setTitle("Cancel?");
+    alert.setHeaderText("Are you sure?");
+
+    if(alert.showAndWait().get() == ButtonType.OK){
+        root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+}
+
                                  // Find book
 
 private TextField findBook;
