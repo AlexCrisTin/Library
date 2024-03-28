@@ -15,9 +15,9 @@
          </font>
       </Text>
       <Text layoutX="174.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tài khoản" />
-      <TextField fx:id="nameTextField" layoutX="243.0" layoutY="153.0" />
+      <TextField fx:id="usernameField" layoutX="243.0" layoutY="153.0" />
       <Text layoutX="178.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mật khẩu" />
       <Button layoutX="281.0" layoutY="267.0" mnemonicParsing="false" onAction="#Login" text="login" />
-      <PasswordField layoutX="244.0" layoutY="208.0" />
+      <PasswordField fx:id="passwordField" layoutX="244.0" layoutY="208.0" />
    </children>
 </AnchorPane>

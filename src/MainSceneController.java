@@ -1,6 +1,9 @@
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,14 +14,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.effect.PerspectiveTransform;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.converter.PercentageStringConverter;
 
 public class MainSceneController {
 
@@ -31,11 +36,44 @@ private Parent root;
 
                 //Login and Logout method
                 
+@FXML
+private PasswordField passwordField;
 
 @FXML
-public TextField nameTextField;
+private TextField usernameField;
+
+Preferences preferences;
+
+
+public void in(URL url, ResourceBundle rb){
+    preferences = Preferences.userNodeForPackage(MainSceneController.class);
+
+    if(preferences != null){
+        if(preferences.get("username", null) != null && !preferences.get("username", null).isEmpty()){
+            usernameField.setText(preferences.get("username", null));
+            passwordField.setText(preferences.get("password", null));
+        }
+    }
+}
+@FXML
+
 public void Login(ActionEvent event) throws IOException{
-    
+    if(usernameField.getText().equals("an") && passwordField.getText().equals("12345")){
+        if (preferences != null) {
+            preferences.put("username", usernameField.getText());
+            preferences.put("pass", passwordField.getText());
+        } else {
+            System.out.println("Welcome");
+        }
+
+        root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
     /*String username = nameTextField.getText();
 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("MainScene.fxml"));
@@ -44,11 +82,7 @@ public void Login(ActionEvent event) throws IOException{
     Scene2Login login = loader.getController();
     login.displayName(username);
     */
-    root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
-    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
+    
 }
     @FXML
     private AnchorPane scenePane;
@@ -230,6 +264,5 @@ public void Pick(ActionEvent event) throws IOException{
         
     }
 }
-
 }
             
