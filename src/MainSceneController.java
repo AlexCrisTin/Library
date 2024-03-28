@@ -215,20 +215,20 @@ public void btnView3Clicked(ActionEvent event) throws IOException{
 private ImageView imgView;
 
 
-    public void Pick(ActionEvent event) throws IOException{
+public void Pick(ActionEvent event) throws IOException{
     FileChooser fileChooser = new FileChooser();
     fileChooser.setInitialDirectory(new File("C:\\"));
     fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JPEG image","*.jpg"),
         new FileChooser.ExtensionFilter("PNG image", "*.png"), new FileChooser.ExtensionFilter("All images", "*.jpg","*.png"));
-        File selectFile = fileChooser.showOpenDialog(stage);
-      if(selectFile != null){
-        Image image = new Image(selectFile.getPath());
+    File selectFile = fileChooser.showOpenDialog(stage);
+    if(selectFile != null){
+        Image image = new Image(selectFile.toURI().toURL().toExternalForm());
         imgView.setImage(image);
-      }
-      else{
+    }
+    else{
         System.out.println("No file has been choose");
-      }
-     
+        
+    }
 }
 
 }
