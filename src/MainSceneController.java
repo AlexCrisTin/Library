@@ -17,13 +17,13 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.effect.PerspectiveTransform;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.util.converter.PercentageStringConverter;
+
 
 public class MainSceneController {
 
@@ -58,7 +58,7 @@ public void in(URL url, ResourceBundle rb){
 @FXML
 
 public void Login(ActionEvent event) throws IOException{
-    if(usernameField.getText().equals("team") && passwordField.getText().equals("12345")){
+    if(usernameField.getText().equals("project") && passwordField.getText().equals("12345")){
         if (preferences != null) {
             preferences.put("username", usernameField.getText());
             preferences.put("pass", passwordField.getText());

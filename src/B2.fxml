@@ -29,5 +29,7 @@
             <Font size="15.0" />
          </font>
       </Text>
+      <Text layoutX="436.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thể loại: Sách giáo khoa" />
+      <Text layoutX="437.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày xuất bản: ??/??/??" />
    </children>
 </AnchorPane>
