@@ -11,7 +11,7 @@
    <children>
       <Button layoutX="25.0" layoutY="21.0" mnemonicParsing="false" onAction="#btnExitClicked" text="Exit" />
       <Button layoutX="83.0" layoutY="85.0" mnemonicParsing="false" onAction="#Create" text="Thêm sách" />
-      <Button layoutX="88.0" layoutY="123.0" mnemonicParsing="false" onAction="#Delete" text="Xóa sách" />
+      <Button layoutX="83.0" layoutY="123.0" mnemonicParsing="false" onAction="#Delete" text="Xóa sách" />
       <Text layoutX="289.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên sách" />
       <TextField layoutX="371.0" layoutY="73.0" />
       <TextField layoutX="371.0" layoutY="175.0" />
@@ -29,5 +29,6 @@
       <Text layoutX="600.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số lượng" />
       <TextField layoutX="690.0" layoutY="174.0" prefHeight="26.0" prefWidth="29.0" />
       <Button layoutX="456.0" layoutY="489.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="143.0" text="Đăng" />
+      <Button layoutX="83.0" layoutY="161.0" mnemonicParsing="false" onAction="#Create" text="Chỉnh sửa sách" />
    </children>
 </AnchorPane>
