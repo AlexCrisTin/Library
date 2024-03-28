@@ -7,6 +7,6 @@
    <children>
       <Button layoutX="25.0" layoutY="21.0" mnemonicParsing="false" onAction="#btnExitClicked" text="Exit" />
       <Button layoutX="83.0" layoutY="85.0" mnemonicParsing="false" onAction="#Create" text="Thêm sách" />
-      <Button layoutX="87.0" layoutY="142.0" mnemonicParsing="false" onAction="#Delete" text="Xóa sách" />
+      <Button layoutX="87.0" layoutY="122.0" mnemonicParsing="false" onAction="#Delete" text="Xóa sách" />
    </children>
 </AnchorPane>

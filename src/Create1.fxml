@@ -27,7 +27,7 @@
       <Button layoutX="279.0" layoutY="489.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="89.0" prefWidth="143.0" text="Hủy" />
       <ImageView fx:id="imgView" fitHeight="150.0" fitWidth="200.0" layoutX="535.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true" />
       <Text layoutX="600.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số lượng" />
-      <TextField layoutX="671.0" layoutY="175.0" prefHeight="26.0" prefWidth="29.0" />
+      <TextField layoutX="690.0" layoutY="174.0" prefHeight="26.0" prefWidth="29.0" />
       <Button layoutX="456.0" layoutY="489.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="143.0" text="Đăng" />
    </children>
 </AnchorPane>
