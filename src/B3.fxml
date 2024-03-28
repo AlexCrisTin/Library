@@ -19,12 +19,12 @@
       <Text layoutX="418.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mô tả sách" />
       <Button layoutX="229.0" layoutY="425.0" mnemonicParsing="false" onAction="#btnExitClicked" text="Thuê" />
       <Text layoutX="500.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tình trạng sách: " />
-      <Text layoutX="514.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Java Programming">
+      <Text layoutX="513.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Java Programming">
          <font>
             <Font size="29.0" />
          </font>
       </Text>
-      <Text layoutX="577.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Svetlin Nakov">
+      <Text layoutX="567.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Svetlin Nakov">
          <font>
             <Font size="15.0" />
          </font>

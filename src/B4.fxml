@@ -19,12 +19,12 @@
       <Text layoutX="416.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mô tả sách" />
       <Button layoutX="229.0" layoutY="425.0" mnemonicParsing="false" onAction="#btnExitClicked" text="Thuê" />
       <Text layoutX="500.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tình trạng sách: " />
-      <Text layoutX="496.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Bộ Giáo Dục và Đào Tạo">
+      <Text layoutX="511.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Bộ Giáo Dục và Đào Tạo">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text layoutX="526.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Triết Học">
+      <Text layoutX="543.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Triết Học">
          <font>
             <Font size="29.0" />
          </font>

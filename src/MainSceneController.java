@@ -67,6 +67,22 @@ public void Logout(ActionEvent event) {
 
                     // Button Click
 
+public void Home(ActionEvent event) throws IOException{
+    root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    scene = new Scene(root);
+    stage.setScene(scene);
+    stage.show();
+}
+
+public void watchmore(ActionEvent event) throws IOException{
+    root = FXMLLoader.load(getClass().getResource("Watchmore.fxml"));
+    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    scene = new Scene(root);
+    stage.setScene(scene);
+    stage.show();
+}
+
 public void btnExitClicked(ActionEvent event) throws IOException{
     Alert alert = new Alert(AlertType.CONFIRMATION);
     alert.setTitle("Exit?");
