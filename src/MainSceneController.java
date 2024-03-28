@@ -263,6 +263,23 @@ public void Pick(ActionEvent event) throws IOException{
         System.out.println("No file has been choose");
         
     }
+} 
+                    //Information
+public void information(ActionEvent event) throws IOException{
+    root = FXMLLoader.load(getClass().getResource("infor.fxml"));
+    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    scene = new Scene(root);
+    stage.setScene(scene);
+    stage.show();
 }
+
+
+
+
+
+
+
+
+
 }
-            
+                    

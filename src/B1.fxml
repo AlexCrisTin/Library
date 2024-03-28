@@ -16,15 +16,22 @@
          </image>
       </ImageView>
       <Text layoutX="210.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ảnh minh họa" wrappingWidth="74.6484375" />
-      <Text layoutX="416.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mô tả sách" />
-      <Button layoutX="229.0" layoutY="425.0" mnemonicParsing="false" onAction="#btnExitClicked" text="Thuê" />
-      <Text layoutX="500.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tình trạng sách: " />
+      <Button layoutX="229.0" layoutY="425.0" mnemonicParsing="false" onAction="#information" text="Thuê" />
+      <Text layoutX="436.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tình trạng sách: " />
       <Text layoutX="523.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C++ learning">
          <font>
             <Font size="29.0" />
          </font>
       </Text>
       <Text layoutX="562.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Mark Reed">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="436.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thể loại: Sách giáo khoa" />
+      <Text layoutX="437.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày xuất bản: ??/??/??" />
+      <Text layoutX="436.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Giá thuê: 50k/tháng" />
+      <Text layoutX="409.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mô tả sách">
          <font>
             <Font size="15.0" />
          </font>
