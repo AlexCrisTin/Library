@@ -58,7 +58,7 @@ public void in(URL url, ResourceBundle rb){
 @FXML
 
 public void Login(ActionEvent event) throws IOException{
-    if(usernameField.getText().equals("an") && passwordField.getText().equals("12345")){
+    if(usernameField.getText().equals("team") && passwordField.getText().equals("12345")){
         if (preferences != null) {
             preferences.put("username", usernameField.getText());
             preferences.put("pass", passwordField.getText());
