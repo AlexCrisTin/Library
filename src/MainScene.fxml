@@ -28,7 +28,7 @@
       </AnchorPane>
       <ImageView fitHeight="150.0" fitWidth="149.0" layoutX="273.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@GIJK7urb0AENS6E.jpg" />
+            <Image url="@61FTxQobUKL._AC_UF1000,1000_QL80_.jpg" />
          </image>
       </ImageView>
       <Button layoutX="305.0" layoutY="283.0" mnemonicParsing="false" onAction="#btnViewClicked" text="View" />
@@ -37,22 +37,22 @@
             <Font size="33.0" />
          </font>
       </Text>
-      <ImageView fitHeight="150.0" fitWidth="149.0" layoutX="426.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="149.0" layoutX="412.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@illust_100961522_20220903_115021.png" />
+            <Image url="@toan-roi-rac-nganh-cntt.jpg" />
          </image>
       </ImageView>
       <Button layoutX="450.0" layoutY="283.0" mnemonicParsing="false" onAction="#btnView1Clicked" text="View" />
       <ImageView fitHeight="150.0" fitWidth="149.0" layoutX="564.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@illust_101835534_20221010_215219.png" />
+            <Image url="@Java-Programming-Basics-Book-Cover.png" />
          </image>
       </ImageView>
       <Button layoutX="596.0" layoutY="283.0" mnemonicParsing="false" onAction="#btnView2Clicked" text="View" />
       <Button layoutX="751.0" layoutY="287.0" mnemonicParsing="false" onAction="#btnView3Clicked" text="View" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="718.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@GI3JbBzasAAcJb9.jpg" />
+            <Image url="@773528504979_mllkc.jpg" />
          </image>
       </ImageView>
       <Line endX="641.0" endY="22.0" layoutX="250.0" layoutY="76.0" startX="-51.600006103515625" startY="22.0" />
