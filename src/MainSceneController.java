@@ -11,7 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
@@ -220,11 +220,15 @@ private ImageView imgView;
     fileChooser.setInitialDirectory(new File("C:\\"));
     fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JPEG image","*.jpg"),
         new FileChooser.ExtensionFilter("PNG image", "*.png"), new FileChooser.ExtensionFilter("All images", "*.jpg","*.png"));
-        File selectFile = fileChooser.showOpenDialog(null);
-      
+        File selectFile = fileChooser.showOpenDialog(stage);
+      if(selectFile != null){
         Image image = new Image(selectFile.getPath());
         imgView.setImage(image);
-    
+      }
+      else{
+        System.out.println("No file has been choose");
+      }
+     
 }
 
 }
