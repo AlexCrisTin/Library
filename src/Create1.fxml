@@ -29,6 +29,6 @@
       <Text layoutX="600.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số lượng" />
       <TextField layoutX="690.0" layoutY="174.0" prefHeight="26.0" prefWidth="29.0" />
       <Button layoutX="456.0" layoutY="489.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="143.0" text="Đăng" />
-      <Button layoutX="83.0" layoutY="161.0" mnemonicParsing="false" onAction="#Create" text="Chỉnh sửa sách" />
+      <Button layoutX="83.0" layoutY="161.0" mnemonicParsing="false" onAction="#Fix" text="Chỉnh sửa sách" />
    </children>
 </AnchorPane>

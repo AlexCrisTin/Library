@@ -155,6 +155,14 @@ public void Delete(ActionEvent event) throws IOException{
     stage.show();
 }
 
+public void Fix(ActionEvent event) throws IOException{
+    root = FXMLLoader.load(getClass().getResource("fix.fxml"));
+    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    scene = new Scene(root);
+    stage.setScene(scene);
+    stage.show();
+
+}
 public void ReturnBook(ActionEvent event) throws IOException{
     root = FXMLLoader.load(getClass().getResource("return.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
