@@ -5,14 +5,19 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+
+
 import javafx.scene.control.Button;
+
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class Bookinfo {
+    
     @FXML
     private TextField count;
 
@@ -31,7 +36,7 @@ public class Bookinfo {
     @FXML
     private TextField price;
     @FXML
-    void Bookinfo(ActionEvent event) throws IOException {
+    public void Create(ActionEvent event) throws IOException {
         String[] bookInfo = new String[5];
         bookInfo[0] = count.getText();
         bookInfo[1] = daypuli.getPromptText();
@@ -57,5 +62,6 @@ public class Bookinfo {
         } catch (IOException e){}
     }
     
+   
 }
 
