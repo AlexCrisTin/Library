@@ -63,7 +63,7 @@ public void in(URL url, ResourceBundle rb){
 @FXML
 
 public void Login(ActionEvent event) throws IOException{
-    if(usernameField.getText().equals("project") && passwordField.getText().equals("12345")){
+    if(usernameField.getText().equals("1") && passwordField.getText().equals("1")){
         if (preferences != null) {
             preferences.put("username", usernameField.getText());
             preferences.put("pass", passwordField.getText());
@@ -71,7 +71,7 @@ public void Login(ActionEvent event) throws IOException{
             System.out.println("Welcome");
         }
 
-        root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -107,7 +107,7 @@ public void Logout(ActionEvent event) {
                     // Button Click
 
 public void Home(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -115,7 +115,7 @@ public void Home(ActionEvent event) throws IOException{
 }
 
 public void watchmore(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("Watchmore.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/Watchmore.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -129,7 +129,7 @@ public void btnExitClicked(ActionEvent event) throws IOException{
     alert.setContentText("Save everything before exit!!!");
 
     if(alert.showAndWait().get() == ButtonType.OK){
-        root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -137,7 +137,7 @@ public void btnExitClicked(ActionEvent event) throws IOException{
     }
 }
 public void btnCreateClicked(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("Create.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/Create.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -145,7 +145,7 @@ public void btnCreateClicked(ActionEvent event) throws IOException{
 }
 
 public void Create(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("Create1.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/Create1.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -153,7 +153,7 @@ public void Create(ActionEvent event) throws IOException{
 }
 
 public void Delete(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/Delete.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -161,7 +161,7 @@ public void Delete(ActionEvent event) throws IOException{
 }
 
 public void Fix(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("fix.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/fix.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -169,7 +169,7 @@ public void Fix(ActionEvent event) throws IOException{
 
 }
 public void ReturnBook(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("return.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/return.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -179,7 +179,7 @@ public void ReturnBook(ActionEvent event) throws IOException{
 
 
 public void CheckBook(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("CheckBook.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/CheckBook.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -193,7 +193,7 @@ public void Cancel(ActionEvent event) throws IOException {
     alert.setContentText("Think again before cancel posting a book");
 
     if(alert.showAndWait().get() == ButtonType.OK){
-        root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -215,7 +215,7 @@ public void Find(ActionEvent event){
                     //Book
 
 public void btnViewClicked(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("B1.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/B1.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -223,7 +223,7 @@ public void btnViewClicked(ActionEvent event) throws IOException{
 }
 
 public void btnView1Clicked(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("B2.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/B2.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -231,7 +231,7 @@ public void btnView1Clicked(ActionEvent event) throws IOException{
 }
 
 public void btnView2Clicked(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("B3.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/B3.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -239,7 +239,7 @@ public void btnView2Clicked(ActionEvent event) throws IOException{
 }
 
 public void btnView3Clicked(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("B4.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/B4.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -279,7 +279,7 @@ public void Pick(ActionEvent event) throws IOException{
 } 
                     //Information
 public void information(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("infor.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/infor.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -310,11 +310,11 @@ public class Write {
 }
 */
 
-
-public class FXMLParser {
+public void upload(ActionEvent event) throws IOException{
+class FXMLParser {
     public static void main(String[] args) {
         try {
-            File fxmlFile = new File("Create1.fxml");
+            File fxmlFile = new File("/FXML/Create1.fxml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fxmlFile);
@@ -335,7 +335,7 @@ public class FXMLParser {
         }
     }
 }
-
+}
 
 }
                     

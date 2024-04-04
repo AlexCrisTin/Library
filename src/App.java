@@ -16,7 +16,7 @@ public class App extends Application {
   
   Parent root;
 try {
-    root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+    root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
     Scene scene = new Scene(root);
   
         primaryStage.setTitle("Library");

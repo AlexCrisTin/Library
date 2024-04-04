@@ -8,14 +8,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
    <children>
-      <Button layoutX="25.0" layoutY="21.0" mnemonicParsing="false" onAction="#btnExitClicked" text="Exit" />
-      <Button layoutX="83.0" layoutY="85.0" mnemonicParsing="false" onAction="#Create" text="Thêm sách" />
-      <Button layoutX="83.0" layoutY="124.0" mnemonicParsing="false" onAction="#Delete" text="Xóa sách" />
       <Text layoutX="404.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chọn sách để xóa">
          <font>
             <Font size="15.0" />
          </font></Text>
-      <Button layoutX="83.0" layoutY="162.0" mnemonicParsing="false" onAction="#Fix" text="Chỉnh sửa sách" />
       <ChoiceBox layoutX="387.0" layoutY="59.0" prefWidth="150.0" />
+      <AnchorPane prefHeight="600.0" prefWidth="226.0" style="-fx-background-color: #282840;">
+         <children>
+            <Button layoutX="61.0" layoutY="169.0" mnemonicParsing="false" onAction="#Fix" text="Chỉnh sửa sách" />
+            <Button layoutX="61.0" layoutY="127.0" mnemonicParsing="false" onAction="#Delete" text="Xóa sách" />
+            <Button layoutX="61.0" layoutY="85.0" mnemonicParsing="false" onAction="#Create" text="Thêm sách" />
+            <Button layoutX="24.0" layoutY="23.0" mnemonicParsing="false" onAction="#btnExitClicked" text="Exit" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

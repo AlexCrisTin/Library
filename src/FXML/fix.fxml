@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
+   <children>
+      <Text layoutX="414.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chọn sách sửa">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <ChoiceBox layoutX="387.0" layoutY="59.0" prefWidth="150.0" />
+      <AnchorPane prefHeight="601.0" prefWidth="230.0" style="-fx-background-color: #282840;">
+         <children>
+            <Button layoutX="61.0" layoutY="169.0" mnemonicParsing="false" onAction="#Fix" text="Chỉnh sửa sách" />
+            <Button layoutX="61.0" layoutY="127.0" mnemonicParsing="false" onAction="#Delete" text="Xóa sách" />
+            <Button layoutX="61.0" layoutY="85.0" mnemonicParsing="false" onAction="#Create" text="Thêm sách" />
+            <Button layoutX="25.0" layoutY="22.0" mnemonicParsing="false" onAction="#btnExitClicked" text="Exit" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
