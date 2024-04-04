@@ -5,6 +5,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +28,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
+import org.w3c.dom.*;
 
 public class MainSceneController {
 
@@ -281,12 +286,61 @@ public void information(ActionEvent event) throws IOException{
     stage.show();
 }
 
+//nhap file
+public class Item {
+    private String field1;
+    private String field2;
+    private String field3;
+    private String field4;
+    private String field5;
+    private String field6;
+    private String field7;
+    public void setField1(String string) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setField1'");
+    }
+
+    // Các phương thức getter và setter cho từng trường dữ liệu
+}
+/* 
+public class Write {
+    public static void main(String[] args) {
+        FileWriter fw = new FileWriter("data.txt", true);
+    }
+}
+*/
 
 
-
-
-
-
+public class FXMLParser {
+    public static void main(String[] args) {
+        try {
+            // Load the FXML file
+            File fxmlFile = new File("Create1.fxml");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(fxmlFile);
+            
+            // Normalize the document
+            doc.getDocumentElement().normalize();
+            
+            // Get the root element
+            Element root = doc.getDocumentElement();
+            
+            // Here you can extract data from the root element
+            // For example, if you want to extract text content:
+            String content = root.getTextContent();
+            
+            // Write the extracted content to another file
+            FileWriter writer = new FileWriter("output.txt");
+            writer.write(content);
+            writer.close();
+            
+            System.out.println("Data extracted and written to output.txt successfully.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 
 
 }
