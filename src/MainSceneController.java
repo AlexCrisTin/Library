@@ -26,8 +26,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.w3c.dom.*;
@@ -65,7 +63,7 @@ public void in(URL url, ResourceBundle rb){
 @FXML
 
 public void Login(ActionEvent event) throws IOException{
-    if(usernameField.getText().equals("1") && passwordField.getText().equals("1")){
+    if(usernameField.getText().equals("project") && passwordField.getText().equals("12345")){
         if (preferences != null) {
             preferences.put("username", usernameField.getText());
             preferences.put("pass", passwordField.getText());
@@ -259,7 +257,7 @@ public void btnView3Clicked(ActionEvent event) throws IOException{
 
 
 
-                                //Pick photo and upload
+                                //Pick photo
 @FXML
 private ImageView imgView;
 
@@ -271,27 +269,14 @@ public void Pick(ActionEvent event) throws IOException{
         new FileChooser.ExtensionFilter("PNG image", "*.png"), new FileChooser.ExtensionFilter("All images", "*.jpg","*.png"));
     File selectFile = fileChooser.showOpenDialog(stage);
     if(selectFile != null){
-        
         Image image = new Image(selectFile.toURI().toURL().toExternalForm());
-        
         imgView.setImage(image);
-        
-        
     }
     else{
         System.out.println("No file has been choose");
         
     }
-
-
 } 
-public void upload(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("B4.fxml"));
-    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
-}
                     //Information
 public void information(ActionEvent event) throws IOException{
     root = FXMLLoader.load(getClass().getResource("infor.fxml"));
@@ -329,28 +314,22 @@ public class Write {
 public class FXMLParser {
     public static void main(String[] args) {
         try {
-            // Load the FXML file
             File fxmlFile = new File("Create1.fxml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fxmlFile);
             
-            // Normalize the document
             doc.getDocumentElement().normalize();
             
-            // Get the root element
             Element root = doc.getDocumentElement();
             
-            // Here you can extract data from the root element
-            // For example, if you want to extract text content:
             String content = root.getTextContent();
             
-            // Write the extracted content to another file
             FileWriter writer = new FileWriter("output.txt");
             writer.write(content);
             writer.close();
             
-            System.out.println("Data extracted and written to output.txt successfully.");
+            System.out.println("successfully.");
         } catch (Exception e) {
             e.printStackTrace();
         }
