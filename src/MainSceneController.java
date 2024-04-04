@@ -311,7 +311,7 @@ public class Item {
     private String field6;
     private String field7;
     public void setField1(String string) {
-        // TODO Auto-generated method stub
+        
         throw new UnsupportedOperationException("Unimplemented method 'setField1'");
     }
 
