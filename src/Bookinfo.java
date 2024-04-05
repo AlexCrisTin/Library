@@ -36,8 +36,8 @@ public class Bookinfo {
     @FXML
     private TextField price;
     @FXML
-    public void Create(ActionEvent event) throws IOException {
-        String[] bookInfo = new String[5];
+    public void information(ActionEvent event) throws IOException {
+        String[] bookInfo = new String[6];
         bookInfo[0] = count.getText();
         bookInfo[1] = daypuli.getPromptText();
         bookInfo[2] = kind.getText();
@@ -47,16 +47,16 @@ public class Bookinfo {
         
         saveToFile(bookInfo);
 
-        Parent NewGuestInterface = FXMLLoader.load(getClass().getResource("Create1.fxml"));
-        Scene NewGuestScene = new Scene(NewGuestInterface); 
+        Parent NewBookInterface = FXMLLoader.load(getClass().getResource("Create1.fxml"));
+        Scene NewBookScene = new Scene(NewBookInterface); 
         Stage window = (Stage)((Button) event.getSource()).getScene().getWindow(); 
-        window.setScene(NewGuestScene);
+        window.setScene(NewBookScene);
         window.show();
     }
 
-    private void saveToFile(String[] guestInfo){
+    private void saveToFile(String[] BookInfo){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("BookInfo.dat", true))) {
-            for (String info : guestInfo) {
+            for (String info : BookInfo) {
                 writer.write(info);
             }
         } catch (IOException e){}

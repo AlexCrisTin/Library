@@ -9,10 +9,13 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import java.io.FileWriter;
-import java.io.IOException;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,6 +23,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 
@@ -113,14 +118,25 @@ public void Home(ActionEvent event) throws IOException{
     stage.setScene(scene);
     stage.show();
 }
-
+    
+    
 public void watchmore(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("/FXML/Watchmore.fxml"));
+    
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Watchmore.fxml"));
+    root = loader.load();
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
+    ObservableList<availableBooks> books = FXCollections.observableArrayList(
+        new availableBooks("Book1", "Author1", "Kind1", "View1"),
+        new availableBooks("Book2", "Author2", "Kind2", "View2")
+        
+    );
+    show show = loader.getController();
+    show.initialize(books);
     stage.setScene(scene);
     stage.show();
 }
+
 
 public void btnExitClicked(ActionEvent event) throws IOException{
     Alert alert = new Alert(AlertType.CONFIRMATION);
