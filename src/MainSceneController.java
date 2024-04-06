@@ -2,6 +2,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
@@ -168,13 +169,21 @@ public void Create(ActionEvent event) throws IOException{
     stage.show();
 }
 
-public void Delete(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("/FXML/Delete.fxml"));
+public void Delete(ActionEvent event) throws IOException {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Delete.fxml"));
+    root = loader.load();
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    ObservableList<availableBooks> books = FXCollections.observableArrayList(
+        new availableBooks("C++", "Author1", "Kind1", "View1"),
+        new availableBooks("Book2", "Author2", "Kind2", "View2")
+    );
+    show show = loader.getController();
+    show.initialize(null, null, books);
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
 }
+
 
 public void Fix(ActionEvent event) throws IOException{
     root = FXMLLoader.load(getClass().getResource("/FXML/fix.fxml"));
@@ -349,7 +358,9 @@ public class Write {
         String namebookText = namebook.getText();
         String authorText = nameauthor.getText();
         String kindText = kind.getText();
-        
+        if (books == null) {
+            books = new ArrayList<>();
+        }
     
         availableBooks newBook = new availableBooks(namebookText, authorText, kindText, kindText );
         books.add(newBook);

@@ -57,6 +57,12 @@ public class show implements Initializable{
             table.setItems(books);
         }
 
+        
+    }
+    public void Delete1 (ActionEvent e) throws IOException{
+        availableBooks selected = table.getSelectionModel().getSelectedItem();
+        books.remove(selected);
+    
     }
     private Stage stage;
     private Scene scene;

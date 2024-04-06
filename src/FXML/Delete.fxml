@@ -29,6 +29,6 @@
             <TableColumn fx:id="view" minWidth="0.0" prefWidth="208.7999267578125" text="Check" />
          </columns>
       </TableView>
-      <Button layoutX="536.0" layoutY="560.0" mnemonicParsing="false" text="Xóa" />
+      <Button layoutX="536.0" layoutY="560.0" mnemonicParsing="false" onAction="#Delete1" text="Xóa" />
    </children>
 </AnchorPane>
