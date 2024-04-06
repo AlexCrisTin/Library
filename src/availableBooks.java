@@ -23,6 +23,10 @@ public String getAuthor(){
 public String getView(){
     return view;
 }
+public void setName(String text) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'setName'");
+}
 }
 
 

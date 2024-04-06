@@ -2,6 +2,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
@@ -22,6 +23,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -120,19 +122,17 @@ public void Home(ActionEvent event) throws IOException{
 }
     
     
-public void watchmore(ActionEvent event) throws IOException{
-    
+public void watchmore(ActionEvent event) throws IOException {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Watchmore.fxml"));
     root = loader.load();
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     ObservableList<availableBooks> books = FXCollections.observableArrayList(
-        new availableBooks("Book1", "Author1", "Kind1", "View1"),
+        new availableBooks("C++", "Author1", "Kind1", "View1"),
         new availableBooks("Book2", "Author2", "Kind2", "View2")
-        
     );
     show show = loader.getController();
-    show.initialize(books);
+    show.initialize(null, null, books);
     stage.setScene(scene);
     stage.show();
 }
@@ -325,9 +325,39 @@ public class Write {
     }
 }
 */
+@FXML
+    private TextField count;
 
-public void upload(ActionEvent event) throws IOException{
-class FXMLParser {
+    @FXML
+    private DatePicker daypuli;
+
+    @FXML
+    private TextField kind;
+
+    @FXML
+    private TextField nameauthor;
+
+    @FXML
+    private TextField namebook;
+
+    @FXML
+    private TextField price;
+
+    private List<availableBooks> books;
+
+    public void upload(ActionEvent event) throws IOException {
+        String namebookText = namebook.getText();
+        String authorText = nameauthor.getText();
+        String kindText = kind.getText();
+        
+    
+        availableBooks newBook = new availableBooks(namebookText, authorText, kindText, kindText );
+        books.add(newBook);
+    }
+    
+    
+}
+     /*class FXMLParser {
     public static void main(String[] args) {
         try {
             File fxmlFile = new File("/FXML/Create1.fxml");
@@ -350,8 +380,4 @@ class FXMLParser {
             e.printStackTrace();
         }
     }
-}
-}
-
-}
-                    
+}          */     
