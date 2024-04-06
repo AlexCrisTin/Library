@@ -334,39 +334,7 @@ public class Write {
     }
 }
 */
-@FXML
-    private TextField count;
 
-    @FXML
-    private DatePicker daypuli;
-
-    @FXML
-    private TextField kind;
-
-    @FXML
-    private TextField nameauthor;
-
-    @FXML
-    private TextField namebook;
-
-    @FXML
-    private TextField price;
-
-    private List<availableBooks> books;
-
-    public void upload(ActionEvent event) throws IOException {
-        String namebookText = namebook.getText();
-        String authorText = nameauthor.getText();
-        String kindText = kind.getText();
-        if (books == null) {
-            books = new ArrayList<>();
-        }
-    
-        availableBooks newBook = new availableBooks(namebookText, authorText, kindText, kindText );
-        books.add(newBook);
-    }
-    
-    
 }
      /*class FXMLParser {
     public static void main(String[] args) {
