@@ -2,32 +2,31 @@
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+
+
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 
-import java.io.FileWriter;
+
+
+
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.DatePicker;
+
 import javafx.scene.control.PasswordField;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 
@@ -36,7 +35,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.w3c.dom.*;
+
 
 public class MainSceneController {
 
@@ -228,15 +227,8 @@ public void Cancel(ActionEvent event) throws IOException {
 
                                  // Find book
 
-private TextField findBook;
-private Button Find;
 
-String find;
-public void Find(ActionEvent event){
-    
-    
 
-}
                     //Book
 
 public void btnViewClicked(ActionEvent event) throws IOException{
@@ -310,53 +302,5 @@ public void information(ActionEvent event) throws IOException{
     stage.setScene(scene);
     stage.show();
 }
-
-//nhap file
-public class Item {
-    private String field1;
-    private String field2;
-    private String field3;
-    private String field4;
-    private String field5;
-    private String field6;
-    private String field7;
-    public void setField1(String string) {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'setField1'");
-    }
-
-    // Các phương thức getter và setter cho từng trường dữ liệu
 }
-/* 
-public class Write {
-    public static void main(String[] args) {
-        FileWriter fw = new FileWriter("data.txt", true);
-    }
-}
-*/
-
-}
-     /*class FXMLParser {
-    public static void main(String[] args) {
-        try {
-            File fxmlFile = new File("/FXML/Create1.fxml");
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(fxmlFile);
-            
-            doc.getDocumentElement().normalize();
-            
-            Element root = doc.getDocumentElement();
-            
-            String content = root.getTextContent();
-            
-            FileWriter writer = new FileWriter("output.txt");
-            writer.write(content);
-            writer.close();
-            
-            System.out.println("successfully.");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-}          */     
+    
