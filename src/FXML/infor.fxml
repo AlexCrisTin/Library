@@ -32,5 +32,7 @@
       <CheckBox fx:id="rule" layoutX="303.0" layoutY="476.0" mnemonicParsing="false" text="Bạn đã đọc điều lệ và tuân thủ theo luật thuê sách ở đây" />
       <Button layoutX="405.0" layoutY="494.0" mnemonicParsing="false" onAction="#rent" prefHeight="91.0" prefWidth="117.0" text="THUÊ" />
       <Hyperlink layoutX="434.0" layoutY="452.0" text="Điều luật" />
+      <Text layoutX="117.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hạn trả" />
+      <TextField fx:id="daypay" layoutX="193.0" layoutY="274.0" />
    </children>
 </AnchorPane>

@@ -25,7 +25,8 @@ public class StudentInfo {
 
     @FXML
     private TextField day;
-
+    @FXML
+    private TextField daypay;
     @FXML
     private TextField namestudent;
     private Stage stage;
@@ -52,10 +53,11 @@ public class StudentInfo {
     void rent(ActionEvent event) throws IOException {
         Alert alert;
          if (rule.isSelected()) {
-        String[] StudentInfo = new String[3];
+        String[] StudentInfo = new String[4];
         StudentInfo[0] = namestudent.getText();
         StudentInfo[1] = MSSV.getText();
         StudentInfo[2] = day.getText();
+        StudentInfo[3] = daypay.getText();
         alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Rent Complete");
         alert.setHeaderText("Rent Complete");
@@ -108,5 +110,7 @@ public class StudentInfo {
         return binary.toString();
 
     }
+    
+    
 }
 
