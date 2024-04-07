@@ -13,6 +13,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
+
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -45,16 +47,33 @@ public class StudentInfo {
     }
     }
     @FXML
+    private CheckBox rule;
+    @FXML
     void rent(ActionEvent event) throws IOException {
+        Alert alert;
+         if (rule.isSelected()) {
         String[] StudentInfo = new String[3];
         StudentInfo[0] = namestudent.getText();
         StudentInfo[1] = MSSV.getText();
         StudentInfo[2] = day.getText();
-        Alert alert = new Alert(AlertType.INFORMATION);
+        alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Rent Complete");
         alert.setHeaderText("Rent Complete");
         
         saveToFile(StudentInfo);
+        }else{
+            alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("MY TERRITORY, MY RULES!");
+            alert.setHeaderText("Bạn chưa đọc luật lệ");
+            if(alert.showAndWait().get() == ButtonType.OK){
+            
+                Parent NewStudentInterface = FXMLLoader.load(getClass().getResource("/FXML/info.fxml"));
+                Scene NewStudentScene = new Scene(NewStudentInterface); 
+                Stage window = (Stage)((Button) event.getSource()).getScene().getWindow(); 
+                window.setScene(NewStudentScene);
+                window.show();
+                }
+        }
         if(alert.showAndWait().get() == ButtonType.OK){
             
         Parent NewStudentInterface = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
@@ -63,7 +82,9 @@ public class StudentInfo {
         window.setScene(NewStudentScene);
         window.show();
         }
-    }
+    
+    
+}
     private void saveToFile(String[] StudentInfo) {
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("StudentData.dat", true)))) {
             for (String info : StudentInfo) {
