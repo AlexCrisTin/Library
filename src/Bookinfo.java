@@ -83,7 +83,7 @@ public class Bookinfo {
         return binary.toString();
 
     }
-    private Stage stage;
+        private Stage stage;
         private Scene scene;
         private Parent root;
     public void ReturnBook(ActionEvent event) throws IOException{
