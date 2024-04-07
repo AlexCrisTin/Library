@@ -50,14 +50,19 @@ public class StudentInfo {
         StudentInfo[0] = namestudent.getText();
         StudentInfo[1] = MSSV.getText();
         StudentInfo[2] = day.getText();
-
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Rent Complete");
+        alert.setHeaderText("Rent Complete");
+        
         saveToFile(StudentInfo);
-
+        if(alert.showAndWait().get() == ButtonType.OK){
+            
         Parent NewStudentInterface = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
         Scene NewStudentScene = new Scene(NewStudentInterface); 
         Stage window = (Stage)((Button) event.getSource()).getScene().getWindow(); 
         window.setScene(NewStudentScene);
         window.show();
+        }
     }
     private void saveToFile(String[] StudentInfo) {
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("StudentData.dat", true)))) {
