@@ -33,8 +33,8 @@ public class StudentDetail {
 
     
     public void setStudent(StudentInformation student){
-        name.setText(String.valueOf(student.getDay()));
-        id.setText(student.getNamestudent());
+        name.setText(String.valueOf(student.getNamestudent()));
+        id.setText(student.getMSSV());
         daily.setText(String.valueOf(student.getDay()));
         dailypay.setText(String.valueOf(student.getDaypay()));
     }

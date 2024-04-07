@@ -104,7 +104,7 @@ import java.io.IOException;
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("No Selection");
             alert.setHeaderText(null);
-            alert.setContentText("Please select a student from the table.");
+            alert.setContentText("Hãy chọn 1 học sinh để kiểm tra");
             alert.showAndWait();
         }
     }
