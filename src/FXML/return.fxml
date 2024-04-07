@@ -14,7 +14,7 @@
          <font>
             <Font size="17.0" />
          </font></Text>
-      <TableView fx:id="tableView" layoutX="33.0" layoutY="75.0" prefHeight="509.0" prefWidth="834.0">
+      <TableView fx:id="tableView" layoutX="33.0" layoutY="75.0" prefHeight="462.0" prefWidth="834.0">
         <columns>
           <TableColumn fx:id="nameColumn" prefWidth="191.20001983642578" text="Học sinh" />
           <TableColumn fx:id="mssvColumn" minWidth="0.800018310546875" prefWidth="133.5999755859375" text="MSSV" />
@@ -23,5 +23,6 @@
             <TableColumn fx:id="dayPayColumn" prefWidth="184.7999267578125" text="Hạn" />
         </columns>
       </TableView>
+      <Button layoutX="420.0" layoutY="560.0" mnemonicParsing="false" onAction="#check" text="Kiểm tra" />
    </children>
 </AnchorPane>

@@ -86,6 +86,29 @@ import java.io.IOException;
             stage.show();
     }
     }
+    public void check(ActionEvent e) throws IOException {
+        StudentInformation selected = tableView.getSelectionModel().getSelectedItem();
+    
+    
+        if (selected != null) {
+            Stage stage = (Stage)((Node) e.getSource()).getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/FXML/StudentDetail.fxml"));
+            Parent studentViewParent = loader.load();
+            Scene scene = new Scene(studentViewParent);
+            StudentDetail controller = loader.getController();
+            controller.setStudent(selected);
+            stage.setScene(scene);
+        } else {
+          
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("No Selection");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select a student from the table.");
+            alert.showAndWait();
+        }
+    }
+    
 }
 
 
