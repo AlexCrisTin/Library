@@ -43,5 +43,6 @@
             <TableColumn fx:id="view" minWidth="0.0" prefWidth="102.4000244140625" text="Check" />
         </columns>
       </TableView>
+      <Button layoutX="681.0" layoutY="64.0" mnemonicParsing="false" onAction="#information" text="Thuê" />
    </children>
 </AnchorPane>

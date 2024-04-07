@@ -87,15 +87,6 @@ public void Login(ActionEvent event) throws IOException{
         
     }
 
-
-    /*String username = nameTextField.getText();
-
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("MainScene.fxml"));
-
-    root = loader.load();
-    Scene2Login login = loader.getController();
-    login.displayName(username);
-    */
     
 }
     @FXML

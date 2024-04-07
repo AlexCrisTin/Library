@@ -121,6 +121,23 @@ private String stringToBinary(String str) {
 
 }
     
+public void Rule(ActionEvent event) throws IOException {
     
+        root = FXMLLoader.load(getClass().getResource("/FXML/Rule.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    
+}
+public void close(ActionEvent event) throws IOException {
+    
+    root = FXMLLoader.load(getClass().getResource("/FXML/info.fxml"));
+    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    scene = new Scene(root);
+    stage.setScene(scene);
+    stage.show();
+
+}
 }
 

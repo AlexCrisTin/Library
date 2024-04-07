@@ -7,14 +7,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="show">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="show">
    <children>
-      <Text layoutX="514.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chọn sách sửa">
+      <Text layoutX="506.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chọn sách sửa">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <TableView fx:id="table" layoutX="246.0" layoutY="50.0" prefHeight="486.0" prefWidth="630.0">
+      <TableView fx:id="table" layoutX="239.0" layoutY="57.0" prefHeight="486.0" prefWidth="630.0">
          <columns>
             <TableColumn fx:id="namebook" prefWidth="171.20001220703125" text="Tên sách" />
             <TableColumn fx:id="author" minWidth="0.0" prefWidth="144.79995727539062" text="Tác giả" />
@@ -22,7 +22,7 @@
             <TableColumn fx:id="view" minWidth="0.0" prefWidth="208.7999267578125" text="Check" />
          </columns>
       </TableView>
-      <AnchorPane prefHeight="601.0" prefWidth="230.0" style="-fx-background-color: #282840;">
+      <AnchorPane prefHeight="602.0" prefWidth="226.0" style="-fx-background-color: #282840;">
          <children>
             <Button layoutX="61.0" layoutY="169.0" mnemonicParsing="false" onAction="#Fix" text="Chỉnh sửa sách" />
             <Button layoutX="61.0" layoutY="127.0" mnemonicParsing="false" onAction="#Delete" text="Xóa sách" />

@@ -146,4 +146,11 @@ public class show implements Initializable{
             stage.show();
         }
     }
+    public void information(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("/FXML/infor.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
