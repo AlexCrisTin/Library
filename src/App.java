@@ -15,7 +15,7 @@ public class App extends Application {
 
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
             Scene scene = new Scene(root);
             Image image = new Image("/icon/2232688.png");
             primaryStage.getIcons().add(image);

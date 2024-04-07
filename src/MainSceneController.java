@@ -29,7 +29,7 @@ import javafx.scene.control.PasswordField;
 
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -67,15 +67,8 @@ public void in(URL url, ResourceBundle rb){
         }
     }
 }
-public void Log(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
-    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
-}
-@FXML
-private Button buttlog;
+
+
 
 public void Login(ActionEvent event) throws IOException{
     if(usernameField.getText().equals("1") && passwordField.getText().equals("1")){
@@ -91,7 +84,7 @@ public void Login(ActionEvent event) throws IOException{
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        buttlog.setVisible(false);
+        
     }
 
 
