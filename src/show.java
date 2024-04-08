@@ -1,13 +1,14 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,7 +21,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class show implements Initializable{
+public class show {
     @FXML
     private TableView<availableBooks> table;
 
@@ -36,32 +37,46 @@ public class show implements Initializable{
     @FXML
     private TableColumn<availableBooks, String> view;
 
-    private ObservableList<availableBooks> books;
+
+  
     
-    public void initialize(URL location, ResourceBundle resources, ObservableList<availableBooks> books) {
-        this.books = books;
-        namebook.setCellValueFactory(new PropertyValueFactory<availableBooks, String>("namebook"));
-        kind.setCellValueFactory(new PropertyValueFactory<availableBooks, String>("kind"));
-        author.setCellValueFactory(new PropertyValueFactory<availableBooks, String>("author"));
-        view.setCellValueFactory(new PropertyValueFactory<availableBooks, String>("view"));
-        table.setItems(books);
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-         {
-            namebook.setCellValueFactory(new PropertyValueFactory<availableBooks, String>("namebook"));
-            kind.setCellValueFactory(new PropertyValueFactory<availableBooks, String>("kind"));
-            author.setCellValueFactory(new PropertyValueFactory<availableBooks, String>("author"));
-            view.setCellValueFactory(new PropertyValueFactory<availableBooks, String>("view"));
-            table.setItems(books);
-        }
-
+    public void initialize() {
         
+        namebook.setCellValueFactory(new PropertyValueFactory<>("namebook"));
+        kind.setCellValueFactory(new PropertyValueFactory<>("kind"));
+        author.setCellValueFactory(new PropertyValueFactory<>("author"));
+        view.setCellValueFactory(new PropertyValueFactory<>("view"));
+        table.setItems(getbooks());
     }
+
+    private ObservableList<availableBooks> getbooks() {
+        ObservableList<availableBooks> books = FXCollections.observableArrayList();
+        try (BufferedReader reader = new BufferedReader(new FileReader("BookData.dat"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                for (int i = 0; i < data.length; i++) {
+                    data[i] = binaryToString(data[i]);
+                }
+                books.add(new availableBooks(data[0], data[1], data[2], data[3]));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return books;
+    }
+
+    private String binaryToString(String binary) {
+        StringBuilder str = new StringBuilder();
+        String[] split = binary.split(" ");
+        for (String s : split) {
+            str.append((char) Integer.parseInt(s, 2));
+        }
+        return str.toString();
+    }
+    
     public void Delete1 (ActionEvent e) throws IOException{
-        availableBooks selected = table.getSelectionModel().getSelectedItem();
-        books.remove(selected);
+      
     
     }
     private Stage stage;

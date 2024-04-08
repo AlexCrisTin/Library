@@ -23,12 +23,9 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class Bookinfo {
-    
-    @FXML
-    private TextField count;
 
     @FXML
-    private DatePicker daypuli;
+    private TextField daypuli;
 
     @FXML
     private TextField kind;
@@ -39,30 +36,28 @@ public class Bookinfo {
     @FXML
     private TextField namebook;
 
-    @FXML
-    private TextField price;
+    
     @FXML
     public void upload(ActionEvent event) throws IOException {
-        String[] bookInfo = new String[6];
-        bookInfo[0] = count.getText();
-        bookInfo[1] = daypuli.getPromptText();
-        bookInfo[2] = kind.getText();
-        bookInfo[3] = nameauthor.getText();
-        bookInfo[4] = namebook.getText();
-        bookInfo[5] = price.getText();
+        String[] bookInfo = new String[4];
+        bookInfo[0] = daypuli.getText();
+        bookInfo[1] = kind.getText();
+        bookInfo[2] = nameauthor.getText();
+        bookInfo[3] = namebook.getText();
+        
         
         saveToFile(bookInfo);
 
-        Parent NewBookInterface = FXMLLoader.load(getClass().getResource("/FXML/Watchmore.fxml"));
+        Parent NewBookInterface = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
         Scene NewBookScene = new Scene(NewBookInterface); 
         Stage window = (Stage)((Button) event.getSource()).getScene().getWindow(); 
         window.setScene(NewBookScene);
         window.show();
     }
 
-    private void saveToFile(String[] bookInfo) {
+    private void saveToFile(String[] BookInfo) {
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("BookData.dat", true)))) {
-            for (String info : bookInfo) {
+            for (String info : BookInfo) {
                 if (info != null) {
                     String binaryString = stringToBinary(info);
                     writer.write(binaryString + ","); 

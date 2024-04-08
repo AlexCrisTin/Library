@@ -12,8 +12,7 @@ import java.util.prefs.Preferences;
 
 
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -120,12 +119,6 @@ public void watchmore(ActionEvent event) throws IOException {
     root = loader.load();
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
-    ObservableList<availableBooks> books = FXCollections.observableArrayList(
-        new availableBooks("C++", "Author1", "Kind1", "View1"),
-        new availableBooks("Book2", "Author2", "Kind2", "View2")
-    );
-    show show = loader.getController();
-    show.initialize(null, null, books);
     stage.setScene(scene);
     stage.show();
 }
@@ -165,12 +158,6 @@ public void Delete(ActionEvent event) throws IOException {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Delete.fxml"));
     root = loader.load();
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    ObservableList<availableBooks> books = FXCollections.observableArrayList(
-        new availableBooks("C++", "Author1", "Kind1", "View1"),
-        new availableBooks("Book2", "Author2", "Kind2", "View2")
-    );
-    show show = loader.getController();
-    show.initialize(null, null, books);
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();

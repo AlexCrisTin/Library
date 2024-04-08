@@ -11,7 +11,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
    <children>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnExitClicked" text="Exit" />
-      <LineChart layoutX="104.0" layoutY="53.0" prefHeight="240.0" prefWidth="682.0">
+      <LineChart fx:id="lineChart" layoutX="47.0" layoutY="53.0" prefHeight="507.0" prefWidth="799.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -19,20 +19,12 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </LineChart>
-      <LineChart layoutX="104.0" layoutY="326.0" prefHeight="240.0" prefWidth="682.0">
-         <xAxis>
-            <CategoryAxis side="BOTTOM" />
-         </xAxis>
-         <yAxis>
-            <NumberAxis side="LEFT" />
-         </yAxis>
-      </LineChart>
       <Text layoutX="372.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tổng số lượng sách">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="372.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số người mượn">
+      <Text layoutX="536.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số người mượn">
          <font>
             <Font size="17.0" />
          </font>

@@ -37,10 +37,10 @@
       <Button layoutX="491.0" layoutY="64.0" mnemonicParsing="false" text="Tìm" />
       <TableView fx:id="table" layoutX="207.0" layoutY="107.0" prefHeight="482.0" prefWidth="672.0">
         <columns>
-          <TableColumn fx:id="namebook" prefWidth="207.99993896484375" text="Tên sách" />
-          <TableColumn fx:id="author" minWidth="0.0" prefWidth="209.60006713867188" text="Tác giả" />
-            <TableColumn fx:id="kind" minWidth="0.0" prefWidth="152.79998779296875" text="Thể loại" />
-            <TableColumn fx:id="view" minWidth="0.0" prefWidth="102.4000244140625" text="Check" />
+          <TableColumn fx:id="namebook" prefWidth="199.20001220703125" text="Tên sách" />
+          <TableColumn fx:id="author" minWidth="0.0" prefWidth="140.80001831054688" text="Tác giả" />
+            <TableColumn fx:id="kind" minWidth="0.0" prefWidth="155.20001220703125" text="Thể loại" />
+            <TableColumn fx:id="view" minWidth="0.0" prefWidth="173.5999755859375" text="Ngày xuất bản" />
         </columns>
       </TableView>
       <Button layoutX="681.0" layoutY="64.0" mnemonicParsing="false" onAction="#information" text="Thuê" />
