@@ -92,13 +92,8 @@ import java.util.List;
     }
     public void check(ActionEvent e) throws IOException {
         StudentInformation selected = tableView.getSelectionModel().getSelectedItem();
-        Alert alert;
-            alert = new Alert(AlertType.CONFIRMATION);
-            alert.setTitle("chet");
-            alert.setHeaderText("zz");
-            tableView.getItems().remove(selected);
+    
         if (selected != null) {
-            
             List<String> lines = new ArrayList<>();
             try (BufferedReader reader = new BufferedReader(new FileReader("StudentData.dat"))) {
                 String line;
@@ -128,16 +123,16 @@ import java.util.List;
             } catch (IOException i) {
                 i.printStackTrace();
             }
-            
+    
+           
+            tableView.getItems().remove(selected);
         } else {
-             alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("No Selection");
             alert.setHeaderText(null);
             alert.setContentText("Hãy chọn 1 học sinh để kiểm tra");
             alert.showAndWait();
         }
-            
-            
     }
     
     
