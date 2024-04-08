@@ -15,8 +15,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
     
@@ -88,27 +92,57 @@ import java.io.IOException;
     }
     public void check(ActionEvent e) throws IOException {
         StudentInformation selected = tableView.getSelectionModel().getSelectedItem();
-    
-    
+        Alert alert;
+            alert = new Alert(AlertType.CONFIRMATION);
+            alert.setTitle("chet");
+            alert.setHeaderText("zz");
+            tableView.getItems().remove(selected);
         if (selected != null) {
-            Stage stage = (Stage)((Node) e.getSource()).getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/FXML/StudentDetail.fxml"));
-            Parent studentViewParent = loader.load();
-            Scene scene = new Scene(studentViewParent);
-            StudentDetail controller = loader.getController();
-            controller.setStudent(selected);
-            stage.setScene(scene);
+            
+            List<String> lines = new ArrayList<>();
+            try (BufferedReader reader = new BufferedReader(new FileReader("StudentData.dat"))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    String[] data = line.split(",");
+                    for (int i = 0; i < data.length; i++) {
+                        data[i] = binaryToString(data[i]);
+                    }
+                 
+                    if (!data[0].equals(selected.getNamestudent()) ||
+                        !data[1].equals(selected.getMSSV()) ||
+                        !data[2].equals(selected.getDay()) ||
+                        !data[3].equals(selected.getDaypay())) {
+                        lines.add(line);
+                    }
+                }
+            } catch (IOException i) {
+                i.printStackTrace();
+            }
+    
+         
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("StudentData.dat"))) {
+                for (String line : lines) {
+                    writer.write(line);
+                    writer.newLine();
+                }
+            } catch (IOException i) {
+                i.printStackTrace();
+            }
+            
         } else {
-          
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+             alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("No Selection");
             alert.setHeaderText(null);
             alert.setContentText("Hãy chọn 1 học sinh để kiểm tra");
             alert.showAndWait();
         }
+            
+            
     }
     
-}
+    
+    }
+    
+
 
 

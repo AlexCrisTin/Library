@@ -23,6 +23,6 @@
             <TableColumn fx:id="dayPayColumn" prefWidth="184.7999267578125" text="Hạn" />
         </columns>
       </TableView>
-      <Button layoutX="420.0" layoutY="560.0" mnemonicParsing="false" onAction="#check" text="Kiểm tra" />
+      <Button layoutX="421.0" layoutY="560.0" mnemonicParsing="false" onAction="#check" text="Đã trả" />
    </children>
 </AnchorPane>
