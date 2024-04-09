@@ -1,7 +1,10 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-
+import java.util.ArrayList;
+import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -45,11 +48,11 @@ public class show {
         namebook.setCellValueFactory(new PropertyValueFactory<>("namebook"));
         kind.setCellValueFactory(new PropertyValueFactory<>("kind"));
         author.setCellValueFactory(new PropertyValueFactory<>("author"));
-        view.setCellValueFactory(new PropertyValueFactory<>("view"));
-        table.setItems(getbooks());
+        view.setCellValueFactory(new PropertyValueFactory<>("daypuli"));
+        table.setItems(books());
     }
 
-    private ObservableList<availableBooks> getbooks() {
+    private ObservableList<availableBooks> books() {
         ObservableList<availableBooks> books = FXCollections.observableArrayList();
         try (BufferedReader reader = new BufferedReader(new FileReader("BookData.dat"))) {
             String line;
@@ -76,8 +79,49 @@ public class show {
     }
     
     public void Delete1 (ActionEvent e) throws IOException{
-      
+        availableBooks selected = table.getSelectionModel().getSelectedItem();
     
+        if (selected != null) {
+            List<String> lines = new ArrayList<>();
+            try (BufferedReader reader = new BufferedReader(new FileReader("BookData.dat"))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    String[] data = line.split(",");
+                    for (int i = 0; i < data.length; i++) {
+                        data[i] = binaryToString(data[i]);
+                    }
+                 
+                    if (!data[0].equals(selected.getNamebook()) ||
+                        !data[1].equals(selected.getKind()) ||
+                        !data[2].equals(selected.getAuthor()) ||
+                        !data[3].equals(selected.getDaypuli())) {
+                        lines.add(line);
+                    }
+                }
+            } catch (IOException i) {
+                i.printStackTrace();
+            }
+    
+         
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("StudentData.dat"))) {
+                for (String line : lines) {
+                    writer.write(line);
+                    writer.newLine();
+                }
+            } catch (IOException i) {
+                i.printStackTrace();
+            }
+    
+           
+            table.getItems().remove(selected);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("No Selection");
+            alert.setHeaderText(null);
+            alert.setContentText("Hãy chọn 1 sách để xóa ");
+            alert.showAndWait();
+        
+        }
     }
     private Stage stage;
     private Scene scene;

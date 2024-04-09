@@ -219,41 +219,6 @@ public void btnViewClicked(ActionEvent event) throws IOException{
     stage.show();
 }
 
-public void btnView1Clicked(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("/FXML/B2.fxml"));
-    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
-}
-
-public void btnView2Clicked(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("/FXML/B3.fxml"));
-    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
-}
-
-public void btnView3Clicked(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("/FXML/B4.fxml"));
-    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
-}
-
-
-
-
-
-
-
-
-
-
-
-
                                 //Pick photo
 @FXML
 private ImageView imgView;

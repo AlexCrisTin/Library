@@ -15,7 +15,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.DatePicker;
+
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -40,10 +40,10 @@ public class Bookinfo {
     @FXML
     public void upload(ActionEvent event) throws IOException {
         String[] bookInfo = new String[4];
-        bookInfo[0] = daypuli.getText();
+        bookInfo[0] = namebook.getText();
         bookInfo[1] = kind.getText();
         bookInfo[2] = nameauthor.getText();
-        bookInfo[3] = namebook.getText();
+        bookInfo[3] = daypuli.getText();
         
         
         saveToFile(bookInfo);
@@ -76,8 +76,9 @@ public class Bookinfo {
             binary.append(binaryChar).append(" ");
         }
         return binary.toString();
-
+    
     }
+      
         private Stage stage;
         private Scene scene;
         private Parent root;

@@ -130,7 +130,7 @@ import java.util.List;
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("No Selection");
             alert.setHeaderText(null);
-            alert.setContentText("Hãy chọn 1 học sinh để kiểm tra");
+            alert.setContentText("Hãy chọn 1 học sinh để trả sách");
             alert.showAndWait();
         }
     }

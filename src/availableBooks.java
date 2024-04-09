@@ -3,6 +3,7 @@ public class availableBooks {
     private String nameauthor;
     private String kind;
     private String daypuli;
+  
 
     // constructor
     public availableBooks(String namebook, String kind, String nameauthor, String daypuli) {
@@ -10,6 +11,7 @@ public class availableBooks {
         this.kind = kind;
         this.nameauthor = nameauthor;
         this.daypuli = daypuli;
+        
     }
 
     // getters
@@ -28,7 +30,7 @@ public class availableBooks {
     public String getDaypuli() {
         return this.daypuli;
     }
-
+    
     
     public void setNamebook(String namebook) {
         this.namebook = namebook;
@@ -45,5 +47,6 @@ public class availableBooks {
     public void setDaypuli(String daypuli) {
         this.daypuli = daypuli;
     }
+    
 }
 
