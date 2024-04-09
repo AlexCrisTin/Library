@@ -1,3 +1,4 @@
+package Student;
 public class StudentInformation {
     private String namestudent;
     private String MSSV;
