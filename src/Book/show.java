@@ -124,6 +124,18 @@ public class show {
         
         }
     }
+    public void updatebook(ActionEvent event) throws IOException{
+        availableBooks selected = table.getSelectionModel().getSelectedItem();
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/FXML/fixinfo.fxml"));
+            Parent studentViewParent = loader.load();
+            Scene scene = new Scene(studentViewParent);
+            FixBook controller = loader.getController();
+           
+            controller.setBook(selected);
+            stage.setScene(scene);
+    }
     private Stage stage;
     private Scene scene;
     private Parent root;

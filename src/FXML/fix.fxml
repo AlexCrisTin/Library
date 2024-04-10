@@ -30,5 +30,6 @@
             <Button layoutX="24.0" layoutY="23.0" mnemonicParsing="false" onAction="#btnExitClicked" text="Exit" />
          </children>
       </AnchorPane>
+      <Button layoutX="536.0" layoutY="554.0" mnemonicParsing="false" onAction="#updatebook" text="Sửa" />
    </children>
 </AnchorPane>
