@@ -105,14 +105,6 @@ public void Logout(ActionEvent event) {
 
                     // Button Click
 
-public void Home(ActionEvent event) throws IOException{
-    root = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
-    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
-}
-    
     
 public void watchmore(ActionEvent event) throws IOException {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Watchmore.fxml"));
