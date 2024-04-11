@@ -3,6 +3,7 @@ package Book;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
@@ -38,11 +39,11 @@ public class FixBook {
 
     @FXML
     private TextField namebook;
-    public void setBook(availableBooks student){
-        nameauthor.setText(String.valueOf(student.getAuthor()));
-        namebook.setText(student.getNamebook());
-        kind.setText(String.valueOf(student.getKind()));
-        daypuli.setText(String.valueOf(student.getDaypuli()));
+    public void setBook(availableBooks book){
+        nameauthor.setText(String.valueOf(book.getAuthor()));
+        namebook.setText(book.getNamebook());
+        kind.setText(String.valueOf(book.getKind()));
+        daypuli.setText(String.valueOf(book.getDaypuli()));
     }
 
     public void upload(ActionEvent event) throws IOException {
@@ -85,9 +86,6 @@ public class FixBook {
         return binary.toString();
     
     }
-
-
-
 
 
         private Stage stage;
