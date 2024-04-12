@@ -39,13 +39,14 @@ import java.util.List;
         private TableColumn<StudentInformation, String> dayColumn;
         @FXML
         private TableColumn<StudentInformation, String> dayPayColumn;
-    
+        @FXML
+        private TableColumn<StudentInformation, String> bookColumn;
         public void initialize() {
             nameColumn.setCellValueFactory(new PropertyValueFactory<>("namestudent"));
             mssvColumn.setCellValueFactory(new PropertyValueFactory<>("MSSV"));
             dayColumn.setCellValueFactory(new PropertyValueFactory<>("day"));
             dayPayColumn.setCellValueFactory(new PropertyValueFactory<>("daypay"));
-    
+            bookColumn.setCellValueFactory(new PropertyValueFactory<>("book"));
             tableView.setItems(getStudents());
         }
     
@@ -58,7 +59,7 @@ import java.util.List;
                     for (int i = 0; i < data.length; i++) {
                         data[i] = binaryToString(data[i]);
                     }
-                    students.add(new StudentInformation(data[0], data[1], data[2], data[3]));
+                    students.add(new StudentInformation(data[0], data[1], data[2], data[3], data[4]));
                 }
             } catch (IOException e) {
                 e.printStackTrace();

@@ -4,7 +4,7 @@ public class availableBooks {
     private String nameauthor;
     private String kind;
     private String daypuli;
-  
+    
 
     // constructor
     public availableBooks(String namebook, String kind, String nameauthor, String daypuli) {

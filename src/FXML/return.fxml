@@ -18,7 +18,7 @@
         <columns>
           <TableColumn fx:id="nameColumn" prefWidth="191.20001983642578" text="Học sinh" />
           <TableColumn fx:id="mssvColumn" minWidth="0.800018310546875" prefWidth="133.5999755859375" text="MSSV" />
-            <TableColumn fx:id="dayColumn" prefWidth="174.39999389648438" text="Tên sách" />
+            <TableColumn fx:id="bookColumn" prefWidth="174.39999389648438" text="Tên sách" />
             <TableColumn fx:id="dayColumn" prefWidth="151.20001220703125" text="Ngày thuê" />
             <TableColumn fx:id="dayPayColumn" prefWidth="184.7999267578125" text="Hạn" />
         </columns>

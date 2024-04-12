@@ -4,13 +4,14 @@ public class StudentInformation {
     private String MSSV;
     private String day;
     private String daypay;
-
+    private String book;
     // constructor
-    public StudentInformation(String namestudent, String MSSV, String day, String daypay) {
+    public StudentInformation(String namestudent, String MSSV, String day, String daypay, String book) {
         this.namestudent = namestudent;
         this.MSSV = MSSV;
         this.day = day;
         this.daypay = daypay;
+        this.book = book;
     }
 
     // getters
@@ -29,7 +30,9 @@ public class StudentInformation {
     public String getDaypay() {
         return this.daypay;
     }
-
+    public String getbook() {
+        return this.book;
+    }
     // setters
     public void setNamestudent(String namestudent) {
         this.namestudent = namestudent;
@@ -45,5 +48,8 @@ public class StudentInformation {
 
     public void setDaypay(String daypay) {
         this.daypay = daypay;
+    }
+    public void setbook(String book) {
+        this.book = book;
     }
 }

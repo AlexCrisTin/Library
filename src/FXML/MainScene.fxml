@@ -14,7 +14,6 @@
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #282828;">
          <children>
-            <Button layoutX="65.0" layoutY="260.0" mnemonicParsing="false" onAction="#Home" text="Trang chủ" />
             <Button layoutX="52.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnCreateClicked" text="Tùy chỉnh sách" />
             <Button layoutX="69.0" layoutY="338.0" mnemonicParsing="false" onAction="#ReturnBook" text="Trả sách" />
             <Button layoutX="53.0" layoutY="380.0" mnemonicParsing="false" onAction="#CheckBook" text="Thống kê sách" />
@@ -33,7 +32,7 @@
       </Text>
       <Line endX="641.0" endY="22.0" layoutX="250.0" layoutY="76.0" startX="-51.600006103515625" startY="22.0" />
       <Text layoutX="262.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tìm sách" />
-      <TextField layoutX="325.0" layoutY="64.0" />
+      <TextField fx:id="search" layoutX="325.0" layoutY="64.0" />
       <Button layoutX="491.0" layoutY="64.0" mnemonicParsing="false" text="Tìm" />
       <TableView fx:id="table" layoutX="207.0" layoutY="107.0" prefHeight="482.0" prefWidth="672.0">
         <columns>

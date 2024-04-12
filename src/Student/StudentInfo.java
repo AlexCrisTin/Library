@@ -1,9 +1,15 @@
 package Student;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
+
+import Book.availableBooks;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +21,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
-
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -23,7 +29,8 @@ public class StudentInfo {
 
     @FXML
     private TextField MSSV;
-
+    @FXML
+    private ChoiceBox<availableBooks> book;
     @FXML
     private TextField day;
     @FXML
@@ -33,6 +40,42 @@ public class StudentInfo {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    public void initialize() {
+      
+        ObservableList<availableBooks> books = FXCollections.observableArrayList();
+    
+       
+        try (BufferedReader reader = new BufferedReader(new FileReader("BookData.dat"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                for (int i = 0; i < data.length; i++) {
+                    data[i] = binaryToString(data[i]);
+                }
+               
+                books.add(new availableBooks(data[0], line, line, line));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    
+       
+        book.setItems(books);
+    }
+    
+    private String binaryToString(String binary) {
+        StringBuilder str = new StringBuilder();
+        String[] split = binary.split(" ");
+        for (String s : split) {
+            str.append((char) Integer.parseInt(s, 2));
+        }
+        return str.toString();
+    }
+
+
+
+
+
     @FXML
     void btnExitClicked(ActionEvent event) throws IOException {
         Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -54,20 +97,21 @@ public class StudentInfo {
 void rent(ActionEvent event) throws IOException {
     Alert alert;
     if (rule.isSelected()) {
-        String[] StudentInfo = new String[4];
+        String[] StudentInfo = new String[5];
         StudentInfo[0] = namestudent.getText();
         StudentInfo[1] = MSSV.getText();
         StudentInfo[2] = day.getText();
         StudentInfo[3] = daypay.getText();
+        StudentInfo[4] = book.getValue().getNamebook();
 
-        // Check if any field is empty
+       
         for (String info : StudentInfo) {
             if (info == null || info.trim().isEmpty()) {
                 alert = new Alert(AlertType.WARNING);
                 alert.setTitle("Missing Information");
                 alert.setHeaderText("Làm ơn điền thông tin");
                 alert.showAndWait();
-                return;  // Exit the method
+                return; 
             }
         }
 
