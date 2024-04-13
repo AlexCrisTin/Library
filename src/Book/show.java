@@ -11,7 +11,7 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -57,8 +57,10 @@ public class show {
         author.setCellValueFactory(new PropertyValueFactory<>("author"));
         view.setCellValueFactory(new PropertyValueFactory<>("daypuli"));
         table.setItems(books());
+
+        
     }
-FilteredList<availableBooks> filteredList = new FilteredList<>(books, b -> true);
+
 
     
     private ObservableList<availableBooks> books() {

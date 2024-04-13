@@ -41,10 +41,7 @@ public class StudentInfo {
     private Scene scene;
     private Parent root;
     public void initialize() {
-      
         ObservableList<availableBooks> books = FXCollections.observableArrayList();
-    
-       
         try (BufferedReader reader = new BufferedReader(new FileReader("BookData.dat"))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -72,25 +69,6 @@ public class StudentInfo {
         return str.toString();
     }
 
-
-
-
-
-    @FXML
-    void btnExitClicked(ActionEvent event) throws IOException {
-        Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTitle("Exit?");
-        alert.setHeaderText("Are you sure?");
-        alert.setContentText("Save everything before exit!!!");
-    
-        if(alert.showAndWait().get() == ButtonType.OK){
-            root = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-    }
-    }
     @FXML
     private CheckBox rule;
     @FXML
@@ -184,5 +162,20 @@ public void close(ActionEvent event) throws IOException {
     stage.show();
 
 }
+@FXML
+    void btnExitClicked(ActionEvent event) throws IOException {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Exit?");
+        alert.setHeaderText("Are you sure?");
+        alert.setContentText("Save everything before exit!!!");
+    
+        if(alert.showAndWait().get() == ButtonType.OK){
+            root = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+    }
+    }
 }
 

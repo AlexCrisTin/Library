@@ -1,11 +1,16 @@
 package Book;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
+
+import java.util.ArrayList;
+
+import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,44 +44,87 @@ public class FixBook {
 
     @FXML
     private TextField namebook;
-    public void setBook(availableBooks book){
-        nameauthor.setText(String.valueOf(book.getAuthor()));
+    @SuppressWarnings("unused")
+    private availableBooks selectedBook; // Sách được chọn để chỉnh sửa
+
+    // Phương thức này được gọi từ lớp show khi người dùng chọn sách để chỉnh sửa
+    public void setBook(availableBooks book) {
+        this.selectedBook = book;
+        // Hiển thị thông tin sách đã chọn trong giao diện chỉnh sửa
         namebook.setText(book.getNamebook());
-        kind.setText(String.valueOf(book.getKind()));
-        daypuli.setText(String.valueOf(book.getDaypuli()));
+        kind.setText(book.getKind());
+        nameauthor.setText(book.getAuthor());
+        daypuli.setText(book.getDaypuli());
     }
 
-    public void upload(ActionEvent event) throws IOException {
-        String[] bookInfo = new String[4];
-        bookInfo[0] = namebook.getText();
-        bookInfo[1] = kind.getText();
-        bookInfo[2] = nameauthor.getText();
-        bookInfo[3] = daypuli.getText();
+    // Phương thức để lưu thông tin sách sau khi chỉnh sửa
+    public void uploadfix(ActionEvent event) throws IOException {
+        // Lấy thông tin sách cũ
+        String oldNamebook = namebook.getText();
+    
+        // Lấy thông tin sách mới
+        String newNamebook = namebook.getText();
+        String newKind = kind.getText();
+        String newNameauthor = nameauthor.getText();
+        String newDaypuli = daypuli.getText();
         
-        
-        saveToFile(bookInfo);
-
+    
+        // Cập nhật thông tin sách trong tệp nhị phân
+        updateBookInfo(oldNamebook, newNamebook, newKind, newNameauthor, newDaypuli);
+    
+        // Chuyển đến giao diện chính
         Parent NewBookInterface = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
-        Scene NewBookScene = new Scene(NewBookInterface); 
-        Stage window = (Stage)((Button) event.getSource()).getScene().getWindow(); 
+        Scene NewBookScene = new Scene(NewBookInterface);
+        Stage window = (Stage) ((Button) event.getSource()).getScene().getWindow();
         window.setScene(NewBookScene);
         window.show();
     }
-
-    private void saveToFile(String[] BookInfo) {
-        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("BookData.dat", true)))) {
-            for (String info : BookInfo) {
-                if (info != null) {
-                    String binaryString = stringToBinary(info);
-                    writer.write(binaryString + ","); 
+    
+    private void updateBookInfo(String oldNamebook, String newNamebook, String newKind, String newNameauthor, String newDaypuli) {
+        List<String> lines = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader("BookData.dat"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                for (int i = 0; i < data.length; i++) {
+                    data[i] = binaryToString(data[i]);
                 }
+    
+                // Kiểm tra xem dòng nào chứa thông tin sách cần cập nhật
+                if (data[0].equals(oldNamebook)) {
+                    // Cập nhật thông tin sách mới
+                    data[0] = newNamebook;
+                    data[1] = newKind;
+                    data[2] = newNameauthor;
+                    data[3] = newDaypuli;
+                }
+    
+                // Chuyển lại thành dạng nhị phân và thêm vào danh sách dòng mới
+                StringBuilder updatedLine = new StringBuilder();
+                for (String info : data) {
+                    updatedLine.append(stringToBinary(info)).append(",");
+                }
+                lines.add(updatedLine.toString());
             }
-            writer.newLine();
-            writer.flush(); 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    
+        // Ghi lại tất cả các dòng đã cập nhật vào tệp nhị phân
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("BookData.dat"))) {
+            for (String line : lines) {
+                writer.write(line);
+                writer.newLine();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    
+ 
+   
+    
+    // Phương thức này chuyển đổi chuỗi ký tự thành chuỗi nhị phân
     private String stringToBinary(String str) {
         StringBuilder binary = new StringBuilder();
         for (char c : str.toCharArray()) {
@@ -84,9 +132,17 @@ public class FixBook {
             binary.append(binaryChar).append(" ");
         }
         return binary.toString();
-    
     }
-
+    
+    private String binaryToString(String binary) {
+        StringBuilder str = new StringBuilder();
+        String[] split = binary.split(" ");
+        for (String s : split) {
+            str.append((char) Integer.parseInt(s, 2));
+        }
+        return str.toString();
+    }
+    
 
         private Stage stage;
         private Scene scene;

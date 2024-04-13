@@ -31,12 +31,13 @@
       <Button layoutX="423.0" layoutY="322.0" mnemonicParsing="false" onAction="#Pick" text="Chọn" />
       <Button layoutX="371.0" layoutY="489.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="89.0" prefWidth="143.0" text="Hủy" />
       <ImageView fx:id="imgView" fitHeight="198.0" fitWidth="218.0" layoutX="539.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="569.0" layoutY="489.0" mnemonicParsing="false" onAction="#upload" prefHeight="89.0" prefWidth="143.0" text="Đăng" />
+      <Button layoutX="569.0" layoutY="489.0" mnemonicParsing="false" onAction="#uploadfix" prefHeight="89.0" prefWidth="143.0" text="Đăng" />
       <Text layoutX="521.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sửa sách">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
       <TextField fx:id="daypuli" layoutX="690.0" layoutY="123.0" />
+      <Text layoutX="432.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lưu ý: Tên sách không thể thay đổi được" />
    </children>
 </AnchorPane>
