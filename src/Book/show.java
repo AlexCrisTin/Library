@@ -51,14 +51,11 @@ public class show {
 
 
     public void initialize() {
-        
         namebook.setCellValueFactory(new PropertyValueFactory<>("namebook"));
         kind.setCellValueFactory(new PropertyValueFactory<>("kind"));
         author.setCellValueFactory(new PropertyValueFactory<>("author"));
         view.setCellValueFactory(new PropertyValueFactory<>("daypuli"));
         table.setItems(books());
-
-        
     }
 
 

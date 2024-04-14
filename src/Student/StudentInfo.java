@@ -68,12 +68,11 @@ public class StudentInfo {
         return str.toString();
     }
 
-    @FXML
-    private CheckBox rule;
+   
     @FXML
 void rent(ActionEvent event) throws IOException {
     Alert alert;
-    if (rule.isSelected()) {
+    
         String[] StudentInfo = new String[5];
         StudentInfo[0] = namestudent.getText();
         StudentInfo[1] = MSSV.getText();
@@ -97,19 +96,8 @@ void rent(ActionEvent event) throws IOException {
         alert.setHeaderText("Rent Complete");
         
         saveToFile(StudentInfo);
-    } else {
-        alert = new Alert(AlertType.WARNING);
-        alert.setTitle("MY TERRITORY, MY RULES!");
-        alert.setHeaderText("Bạn chưa đọc luật lệ");
-        if(alert.showAndWait().get() == ButtonType.OK){
-            
-            Parent NewStudentInterface = FXMLLoader.load(getClass().getResource("/FXML/info.fxml"));
-            Scene NewStudentScene = new Scene(NewStudentInterface); 
-            Stage window = (Stage)((Button) event.getSource()).getScene().getWindow(); 
-            window.setScene(NewStudentScene);
-            window.show();
-        }
-    }
+     
+    
     if(alert.showAndWait().get() == ButtonType.OK){
         
         Parent NewStudentInterface = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
