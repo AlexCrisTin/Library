@@ -44,6 +44,7 @@ public class FixBook {
 
     @FXML
     private TextField namebook;
+
     @SuppressWarnings("unused")
     private availableBooks selectedBook; // Sách được chọn để chỉnh sửa
 

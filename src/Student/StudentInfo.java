@@ -21,7 +21,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -30,7 +30,7 @@ public class StudentInfo {
     @FXML
     private TextField MSSV;
     @FXML
-    private ChoiceBox<availableBooks> book;
+    private ComboBox<availableBooks> book;
     @FXML
     private TextField day;
     @FXML
@@ -40,7 +40,8 @@ public class StudentInfo {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    public void initialize() {
+    @FXML
+    void initialize() {
         ObservableList<availableBooks> books = FXCollections.observableArrayList();
         try (BufferedReader reader = new BufferedReader(new FileReader("BookData.dat"))) {
             String line;
@@ -49,16 +50,14 @@ public class StudentInfo {
                 for (int i = 0; i < data.length; i++) {
                     data[i] = binaryToString(data[i]);
                 }
-               
                 books.add(new availableBooks(data[0], line, line, line));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-    
-       
-        book.setItems(books);
+        book.setItems(books); 
     }
+
     
     private String binaryToString(String binary) {
         StringBuilder str = new StringBuilder();

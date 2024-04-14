@@ -14,7 +14,9 @@ public class availableBooks {
         this.daypuli = daypuli;
         
     }
-
+    public String toString() {
+        return this.namebook; 
+    }
     // getters
     public String getNamebook() {
         return this.namebook;
