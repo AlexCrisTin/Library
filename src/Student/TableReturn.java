@@ -22,9 +22,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-
-    
     public class TableReturn {
         private Stage stage;
         private Scene scene;
@@ -66,7 +63,6 @@ import java.util.List;
             }
             return students;
         }
-    
         private String binaryToString(String binary) {
             StringBuilder str = new StringBuilder();
             String[] split = binary.split(" ");
@@ -75,8 +71,6 @@ import java.util.List;
             }
             return str.toString();
         }
-    
-    
     @FXML
     void btnExitClicked(ActionEvent event) throws IOException {
         Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -104,7 +98,6 @@ import java.util.List;
                     for (int i = 0; i < data.length; i++) {
                         data[i] = binaryToString(data[i]);
                     }
-                 
                     if (!data[0].equals(selected.getNamestudent()) ||
                         !data[1].equals(selected.getMSSV()) ||
                         !data[2].equals(selected.getDay()) ||
@@ -125,9 +118,9 @@ import java.util.List;
             } catch (IOException i) {
                 i.printStackTrace();
             }
-    
-           
+
             tableView.getItems().remove(selected);
+
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("No Selection");
@@ -136,9 +129,7 @@ import java.util.List;
             alert.showAndWait();
         }
     }
-    
-    
-    }
+ }
     
 
 

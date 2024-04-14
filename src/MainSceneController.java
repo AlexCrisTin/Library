@@ -3,15 +3,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
-
-
-
-
-
-
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,11 +28,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-
-public class MainSceneController {
-
-    
-                     
+public class MainSceneController {      
     
 private Stage stage;
 private Scene scene;
@@ -55,7 +44,6 @@ private TextField usernameField;
 
 Preferences preferences;
 
-
 public void in(URL url, ResourceBundle rb){
     preferences = Preferences.userNodeForPackage(MainSceneController.class);
 
@@ -66,7 +54,6 @@ public void in(URL url, ResourceBundle rb){
         }
     }
 }
-
 
 
 public void Login(ActionEvent event) throws IOException{
@@ -90,7 +77,6 @@ public void Login(ActionEvent event) throws IOException{
 }
     @FXML
     private AnchorPane scenePane;
-
 public void Logout(ActionEvent event) {
     Alert alert = new Alert(AlertType.CONFIRMATION);
     alert.setTitle("Logout?");
@@ -197,11 +183,8 @@ public void Cancel(ActionEvent event) throws IOException {
     }
 }
 
-                                 // Find book
 
-
-
-                    //Book
+                                      //Book
 
 public void btnViewClicked(ActionEvent event) throws IOException{
     root = FXMLLoader.load(getClass().getResource("/FXML/B1.fxml"));
@@ -214,8 +197,6 @@ public void btnViewClicked(ActionEvent event) throws IOException{
                                 //Pick photo
 @FXML
 private ImageView imgView;
-
-
 public void Pick(ActionEvent event) throws IOException{
     FileChooser fileChooser = new FileChooser();
     fileChooser.setInitialDirectory(new File("C:\\"));
