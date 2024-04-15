@@ -70,10 +70,7 @@ public void Login(ActionEvent event) throws IOException{
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        
     }
-
-    
 }
     @FXML
     private AnchorPane scenePane;

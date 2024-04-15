@@ -11,7 +11,8 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -56,6 +57,25 @@ public class show {
         author.setCellValueFactory(new PropertyValueFactory<>("author"));
         view.setCellValueFactory(new PropertyValueFactory<>("daypuli"));
         table.setItems(books());
+        FilteredList<availableBooks> filteredList = new FilteredList<>(books(), b -> true);{
+            search.textProperty().addListener((observable, oldValue, newValue) -> {
+                filteredList.setPredicate(book -> {
+                    if (newValue == null || newValue.isEmpty()) {
+                        return true;
+                    }
+            
+                    String lowerCaseFilter = newValue.toLowerCase();
+            
+                    if (book.getNamebook().toLowerCase().contains(lowerCaseFilter)) {
+                        return true;
+                    }
+                    return false;
+                });
+            });}
+            SortedList<availableBooks> sortedData = new SortedList<>(filteredList);
+            sortedData.comparatorProperty().bind(table.comparatorProperty());
+            table.setItems(sortedData);
+
     }
 
 

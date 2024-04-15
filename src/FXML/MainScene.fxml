@@ -33,7 +33,6 @@
       <Line endX="641.0" endY="22.0" layoutX="250.0" layoutY="76.0" startX="-51.600006103515625" startY="22.0" />
       <Text layoutX="262.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tìm sách" />
       <TextField fx:id="search" layoutX="325.0" layoutY="64.0" />
-      <Button layoutX="491.0" layoutY="64.0" mnemonicParsing="false" text="Tìm" />
       <TableView fx:id="table" layoutX="207.0" layoutY="107.0" prefHeight="482.0" prefWidth="672.0">
         <columns>
           <TableColumn fx:id="namebook" prefWidth="199.20001220703125" text="Tên sách" />
