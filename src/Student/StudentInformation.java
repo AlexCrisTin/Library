@@ -5,6 +5,7 @@ public class StudentInformation {
     private String day;
     private String daypay;
     private String book;
+    
     // constructor
     public StudentInformation(String namestudent, String MSSV, String day, String daypay, String book) {
         this.namestudent = namestudent;
@@ -30,7 +31,7 @@ public class StudentInformation {
     public String getDaypay() {
         return this.daypay;
     }
-    public String getbook() {
+    public String getBook() {
         return this.book;
     }
     // setters
@@ -49,7 +50,7 @@ public class StudentInformation {
     public void setDaypay(String daypay) {
         this.daypay = daypay;
     }
-    public void setbook(String book) {
+    public void setBook(String book) {
         this.book = book;
     }
 }
