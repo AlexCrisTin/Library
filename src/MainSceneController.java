@@ -2,26 +2,19 @@
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-
 import javafx.scene.control.ButtonType;
-
 import javafx.scene.control.PasswordField;
-
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -34,7 +27,7 @@ private Stage stage;
 private Scene scene;
 private Parent root;
 
-                //Login and Logout method
+                                         //Login and Logout method
                 
 @FXML
 private PasswordField passwordField;
@@ -45,10 +38,12 @@ private TextField usernameField;
 Preferences preferences;
 
 public void in(URL url, ResourceBundle rb){
+    //Tạo một nút Preferences cho Main
     preferences = Preferences.userNodeForPackage(MainSceneController.class);
-
+    //Kiểm tra
     if(preferences != null){
         if(preferences.get("username", null) != null && !preferences.get("username", null).isEmpty()){
+            // Đặt giá trị lưu trữ cho username và password trong preferences
             usernameField.setText(preferences.get("username", null));
             passwordField.setText(preferences.get("password", null));
         }
@@ -58,13 +53,15 @@ public void in(URL url, ResourceBundle rb){
 
 public void Login(ActionEvent event) throws IOException{
     if(usernameField.getText().equals("1") && passwordField.getText().equals("1")){
+        //Kiểm tra
         if (preferences != null) {
+            //Lưu trữ cho username và password trong preferences
             preferences.put("username", usernameField.getText());
             preferences.put("pass", passwordField.getText());
         } else {
             System.out.println("Welcome");
         }
-        
+        // Load scene
         root = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

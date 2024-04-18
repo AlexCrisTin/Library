@@ -5,8 +5,6 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-
-
 import Book.availableBooks;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,7 +18,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -37,9 +34,11 @@ public class StudentInfo {
     private TextField daypay;
     @FXML
     private TextField namestudent;
+    
     private Stage stage;
     private Scene scene;
     private Parent root;
+
     @FXML
     void initialize() {
         ObservableList<availableBooks> books = FXCollections.observableArrayList();
