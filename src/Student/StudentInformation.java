@@ -6,7 +6,7 @@ public class StudentInformation {
     private String daypay;
     private String book;
     
-    // constructor
+    // constructor khởi tạo các đối tượng của lớp với các giá trị cụ thể.
     public StudentInformation(String namestudent, String MSSV, String day, String daypay, String book) {
         this.namestudent = namestudent;
         this.MSSV = MSSV;
@@ -15,7 +15,7 @@ public class StudentInformation {
         this.book = book;
     }
 
-    // getters
+    // getters lấy giá trị của các trường dữ liệu
     public String getNamestudent() {
         return this.namestudent;
     }
@@ -34,7 +34,7 @@ public class StudentInformation {
     public String getBook() {
         return this.book;
     }
-    // setters
+    // setters thiết lập giá trị cho các trường dữ liệu
     public void setNamestudent(String namestudent) {
         this.namestudent = namestudent;
     }
