@@ -57,7 +57,6 @@ public class StudentInfo {
         book.setItems(books); 
     }
 
-    
     private String binaryToString(String binary) {
         StringBuilder str = new StringBuilder();
         String[] split = binary.split(" ");
@@ -67,7 +66,6 @@ public class StudentInfo {
         return str.toString();
     }
 
-   
     @FXML
 void rent(ActionEvent event) throws IOException {
     Alert alert;
@@ -79,7 +77,6 @@ void rent(ActionEvent event) throws IOException {
         StudentInfo[3] = daypay.getText();
         StudentInfo[4] = book.getValue().getNamebook();
 
-       
         for (String info : StudentInfo) {
             if (info == null || info.trim().isEmpty()) {
                 alert = new Alert(AlertType.WARNING);
@@ -98,7 +95,6 @@ void rent(ActionEvent event) throws IOException {
      
     
     if(alert.showAndWait().get() == ButtonType.OK){
-        
         Parent NewStudentInterface = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
         Scene NewStudentScene = new Scene(NewStudentInterface); 
         Stage window = (Stage)((Button) event.getSource()).getScene().getWindow(); 
@@ -106,6 +102,7 @@ void rent(ActionEvent event) throws IOException {
         window.show();
     }
 }
+
 private void saveToFile(String[] StudentInfo) {
     try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("StudentData.dat", true)))) {
         for (String info : StudentInfo) {
@@ -120,6 +117,7 @@ private void saveToFile(String[] StudentInfo) {
         e.printStackTrace();
     }
 }
+
 private String stringToBinary(String str) {
     StringBuilder binary = new StringBuilder();
     for (char c : str.toCharArray()) {
@@ -127,34 +125,31 @@ private String stringToBinary(String str) {
         binary.append(binaryChar).append(" ");
     }
     return binary.toString();
-
 }
     
 public void Rule(ActionEvent event) throws IOException {
-    
         root = FXMLLoader.load(getClass().getResource("/FXML/Rule.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    
 }
+
 public void close(ActionEvent event) throws IOException {
-    
     root = FXMLLoader.load(getClass().getResource("/FXML/info.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
-
 }
+
 @FXML
     void btnExitClicked(ActionEvent event) throws IOException {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Exit?");
         alert.setHeaderText("Are you sure?");
         alert.setContentText("Save everything before exit!!!");
-    
+
         if(alert.showAndWait().get() == ButtonType.OK){
             root = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
