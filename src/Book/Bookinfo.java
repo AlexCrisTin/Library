@@ -34,7 +34,7 @@ public class Bookinfo {
     @FXML
     private TextField namebook;
 
-    
+    Alert alert;
     @FXML
     public void upload(ActionEvent event) throws IOException {
         String[] bookInfo = new String[4];
@@ -43,7 +43,15 @@ public class Bookinfo {
         bookInfo[2] = nameauthor.getText();
         bookInfo[3] = daypuli.getText();
         
-        
+        for (String info : bookInfo) {
+            if (info == null || info.trim().isEmpty()) {
+                alert = new Alert(AlertType.WARNING);
+                alert.setTitle("Missing Information");
+                alert.setHeaderText("Làm ơn điền thông tin");
+                alert.showAndWait();
+                return; 
+            }
+        }
         saveToFile(bookInfo);
 
         Parent NewBookInterface = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));

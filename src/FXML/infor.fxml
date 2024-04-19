@@ -20,14 +20,14 @@
       </AnchorPane>
       <Button layoutX="34.0" layoutY="24.0" mnemonicParsing="false" onAction="#btnExitClicked" text="Exit" />
       <Text layoutX="106.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên học sinh" />
-      <Text layoutX="109.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MSSV" />
-      <Text layoutX="109.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày thuê" />
+      <Text layoutX="106.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MSSV" />
+      <Text layoutX="106.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày thuê" />
       <TextField fx:id="namestudent" layoutX="193.0" layoutY="143.0" />
       <TextField fx:id="MSSV" layoutX="193.0" layoutY="184.0" />
       <TextField fx:id="day" layoutX="193.0" layoutY="228.0" />
       <Text layoutX="492.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chọn sách cần thuê" />
       <Button layoutX="405.0" layoutY="494.0" mnemonicParsing="false" onAction="#rent" prefHeight="91.0" prefWidth="117.0" text="THUÊ" />
-      <Text layoutX="117.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hạn trả" />
+      <Text layoutX="106.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hạn trả" />
       <TextField fx:id="daypay" layoutX="193.0" layoutY="274.0" />
       <ComboBox fx:id="book" layoutX="625.0" layoutY="143.0" prefWidth="150.0" />
    </children>
