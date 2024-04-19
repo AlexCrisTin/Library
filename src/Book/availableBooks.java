@@ -31,7 +31,7 @@ public class availableBooks {
         return this.daypuli;
     }
     
-    
+    //setters
     public void setNamebook(String namebook) {
         this.namebook = namebook;
     }
