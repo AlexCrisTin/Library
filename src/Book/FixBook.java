@@ -122,8 +122,6 @@ public class FixBook {
         }
     }
     
- 
-   
     
     // Phương thức này chuyển đổi chuỗi ký tự thành chuỗi nhị phân
     private String stringToBinary(String str) {

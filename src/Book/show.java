@@ -136,7 +136,7 @@ public class show {
                 i.printStackTrace();
             }
     
-           
+            
             table.getItems().remove(selected);
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);

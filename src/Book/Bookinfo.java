@@ -52,6 +52,7 @@ public class Bookinfo {
                 return; 
             }
         }
+        
         saveToFile(bookInfo);
 
         Parent NewBookInterface = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
