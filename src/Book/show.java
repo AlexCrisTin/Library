@@ -6,6 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -104,7 +106,6 @@ public class show {
     
     public void Delete1 (ActionEvent event) throws IOException{
         availableBooks selected = table.getSelectionModel().getSelectedItem();
-    
         if (selected != null) {
             List<String> lines = new ArrayList<>();
             try (BufferedReader reader = new BufferedReader(new FileReader("BookData.dat"))) {
@@ -137,7 +138,11 @@ public class show {
             }
     
             
-            table.getItems().remove(selected);
+            ObservableList<availableBooks> items = FXCollections.observableArrayList(table.getItems());
+            Platform.runLater(() -> {
+            items.remove(selected);
+            table.setItems(items);
+});
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("No Selection");

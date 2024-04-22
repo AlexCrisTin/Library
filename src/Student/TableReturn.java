@@ -1,4 +1,5 @@
 package Student;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -130,7 +131,8 @@ import java.util.List;
                     if (!data[0].equals(selected.getNamestudent()) ||
                         !data[1].equals(selected.getMSSV()) ||
                         !data[2].equals(selected.getDay()) ||
-                        !data[3].equals(selected.getDaypay())) {
+                        !data[3].equals(selected.getDaypay())
+                        ) {
                         lines.add(line);
                     }
                 }
@@ -148,7 +150,11 @@ import java.util.List;
                 i.printStackTrace();
             }
 
-            tableView.getItems().remove(selected);
+            ObservableList<StudentInformation> items = FXCollections.observableArrayList(tableView.getItems());
+            Platform.runLater(() -> {
+            items.remove(selected);
+            tableView.setItems(items);
+});
 
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -158,6 +164,7 @@ import java.util.List;
             alert.showAndWait();
         }
     }
+    
  }
     
 
