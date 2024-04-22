@@ -102,7 +102,7 @@ public class show {
         return str.toString();
     }
     
-    public void Delete1 (ActionEvent e) throws IOException{
+    public void Delete1 (ActionEvent event) throws IOException{
         availableBooks selected = table.getSelectionModel().getSelectedItem();
     
         if (selected != null) {
@@ -146,6 +146,7 @@ public class show {
             alert.showAndWait();
         
         }
+        
     }
     public void updatebook(ActionEvent event) throws IOException{
         availableBooks selected = table.getSelectionModel().getSelectedItem();
