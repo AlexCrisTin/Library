@@ -118,7 +118,7 @@ import java.util.List;
     }
     public void check(ActionEvent e) throws IOException {
         StudentInformation selected = tableView.getSelectionModel().getSelectedItem();
-    
+     
         if (selected != null) {
             List<String> lines = new ArrayList<>();
             try (BufferedReader reader = new BufferedReader(new FileReader("StudentData.dat"))) {
@@ -154,6 +154,7 @@ import java.util.List;
             Platform.runLater(() -> {
             items.remove(selected);
             tableView.setItems(items);
+            
 });
 
         } else {
@@ -163,6 +164,7 @@ import java.util.List;
             alert.setContentText("Hãy chọn 1 học sinh để trả sách");
             alert.showAndWait();
         }
+           
     }
     
  }

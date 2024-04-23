@@ -52,9 +52,19 @@ public class Bookinfo {
                 return; 
             }
         }
-        
-        saveToFile(bookInfo);
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Upload Complete");
+            alert.setHeaderText("Upload Complete");
+            
+            saveToFile(bookInfo);
 
+            if(alert.showAndWait().get() == ButtonType.OK){
+                Parent NewStudentInterface = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
+                Scene NewStudentScene = new Scene(NewStudentInterface); 
+                Stage window = (Stage)((Button) event.getSource()).getScene().getWindow(); 
+                window.setScene(NewStudentScene);
+                window.show();
+            }
         Parent NewBookInterface = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
         Scene NewBookScene = new Scene(NewBookInterface); 
         Stage window = (Stage)((Button) event.getSource()).getScene().getWindow(); 
