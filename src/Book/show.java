@@ -137,12 +137,25 @@ public class show {
                 i.printStackTrace();
             }
     
-            
+            Alert alert = new Alert(AlertType.WARNING);
+        alert.setTitle("Delete a book?");
+        alert.setHeaderText("Are you sure?");
+        alert.setContentText("This will delete forever");
+
+        if(alert.showAndWait().get() == ButtonType.OK){
+            Parent NewBookInterface = FXMLLoader.load(getClass().getResource("/FXML/Delete.fxml"));
+            Scene NewBookScene = new Scene(NewBookInterface);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(NewBookScene);
+            window.show();
             ObservableList<availableBooks> items = FXCollections.observableArrayList(table.getItems());
             Platform.runLater(() -> {
             items.remove(selected);
             table.setItems(items);
 });
+            }
+            
+        
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("No Selection");

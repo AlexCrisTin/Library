@@ -69,16 +69,21 @@ public class FixBook {
         String newNameauthor = nameauthor.getText();
         String newDaypuli = daypuli.getText();
         
-    
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Fix Complete");
+        alert.setHeaderText("Fix Complete");
+        
         // Cập nhật thông tin sách trong tệp nhị phân
         updateBookInfo(oldNamebook, newNamebook, newKind, newNameauthor, newDaypuli);
-    
+
+        if(alert.showAndWait().get() == ButtonType.OK){
         // Chuyển đến giao diện chính
         Parent NewBookInterface = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
         Scene NewBookScene = new Scene(NewBookInterface);
         Stage window = (Stage) ((Button) event.getSource()).getScene().getWindow();
         window.setScene(NewBookScene);
         window.show();
+        }
     }
     
     private void updateBookInfo(String oldNamebook, String newNamebook, String newKind, String newNameauthor, String newDaypuli) {
