@@ -142,7 +142,7 @@ public class show {
         alert.setHeaderText("Are you sure?");
         alert.setContentText("This will delete forever");
 
-        if(alert.showAndWait().get() == ButtonType.OK){
+     if(alert.showAndWait().get() == ButtonType.OK){
             Parent NewBookInterface = FXMLLoader.load(getClass().getResource("/FXML/Delete.fxml"));
             Scene NewBookScene = new Scene(NewBookInterface);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
