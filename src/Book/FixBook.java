@@ -85,7 +85,7 @@ public class FixBook {
         window.show();
         }
     }
-    
+    //Phương thức cặp nhật lại sách
     private void updateBookInfo(String oldNamebook, String newNamebook, String newKind, String newNameauthor, String newDaypuli) {
         List<String> lines = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader("BookData.dat"))) {
@@ -137,7 +137,7 @@ public class FixBook {
         }
         return binary.toString();
     }
-    
+    // Phương thức này chuyển đổi chuỗi nhị phân  thành chuỗi ký tự 
     private String binaryToString(String binary) {
         StringBuilder str = new StringBuilder();
         String[] split = binary.split(" ");
