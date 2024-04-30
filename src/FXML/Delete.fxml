@@ -4,6 +4,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -33,5 +35,10 @@
       <Button layoutX="536.0" layoutY="560.0" mnemonicParsing="false" onAction="#Delete1" text="Xóa" />
       <TextField fx:id="search" layoutX="296.0" layoutY="42.0" />
       <Text layoutX="239.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tìm sách" />
+      <ImageView fitHeight="60.0" fitWidth="35.0" layoutX="444.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/pngtree-isolated-web-icon-of-a-book-being-searched-with-a-magnifying-glass-vector-picture-image_10084373.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

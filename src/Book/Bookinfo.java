@@ -65,11 +65,7 @@ public class Bookinfo {
                 window.setScene(NewStudentScene);
                 window.show();
             }
-        Parent NewBookInterface = FXMLLoader.load(getClass().getResource("/FXML/MainScene.fxml"));
-        Scene NewBookScene = new Scene(NewBookInterface); 
-        Stage window = (Stage)((Button) event.getSource()).getScene().getWindow(); 
-        window.setScene(NewBookScene);
-        window.show();
+       
     }
 
     private void saveToFile(String[] BookInfo) {
