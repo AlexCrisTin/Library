@@ -29,8 +29,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class show {
+
     @FXML
     private TextField search;
+
     @FXML
     private TableView<availableBooks> table;
 
@@ -55,6 +57,7 @@ public class show {
         author.setCellValueFactory(new PropertyValueFactory<>("author"));
         view.setCellValueFactory(new PropertyValueFactory<>("daypuli"));
         table.setItems(books());
+
         FilteredList<availableBooks> filteredList = new FilteredList<>(books(), b -> true);{
             search.textProperty().addListener((observable, oldValue, newValue) -> {
                 filteredList.setPredicate(book -> {
@@ -174,10 +177,10 @@ public class show {
             Parent studentViewParent = loader.load();
             Scene scene = new Scene(studentViewParent);
             FixBook controller = loader.getController();
-           
             controller.setBook(selected);
             stage.setScene(scene);
     }
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -189,6 +192,7 @@ public class show {
         stage.setScene(scene);
         stage.show();
     }
+    
     @FXML
     private AnchorPane scenePane;
     

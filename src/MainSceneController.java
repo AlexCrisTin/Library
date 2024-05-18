@@ -1,5 +1,4 @@
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,10 +14,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.FileChooser;
+
 import javafx.stage.Stage;
 
 public class MainSceneController {      
@@ -188,25 +186,7 @@ public void btnViewClicked(ActionEvent event) throws IOException{
     stage.show();
 }
 
-                                //Pick photo
-@FXML
-private ImageView imgView;
-public void Pick(ActionEvent event) throws IOException{
-    FileChooser fileChooser = new FileChooser();
-    fileChooser.setInitialDirectory(new File("C:\\"));
-    fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JPEG image","*.jpg"),
-        new FileChooser.ExtensionFilter("PNG image", "*.png"), new FileChooser.ExtensionFilter("All images", "*.jpg","*.png"));
-    File selectFile = fileChooser.showOpenDialog(stage);
-    if(selectFile != null){
-        Image image = new Image(selectFile.toURI().toURL().toExternalForm());
-        imgView.setImage(image);
-    }
-    else{
-        System.out.println("No file has been choose");
-        
-    }
-} 
-                    //Information
+
 public void information(ActionEvent event) throws IOException{
     root = FXMLLoader.load(getClass().getResource("/FXML/infor.fxml"));
     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
