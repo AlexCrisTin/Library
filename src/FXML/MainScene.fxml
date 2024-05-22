@@ -17,14 +17,19 @@
       <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #282828;">
          <children>
             <Button layoutX="52.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnCreateClicked" text="Tùy chỉnh sách" />
-            <Button layoutX="69.0" layoutY="338.0" mnemonicParsing="false" onAction="#ReturnBook" text="Trả sách" />
+            <Button layoutX="69.0" layoutY="339.0" mnemonicParsing="false" onAction="#ReturnBook" text="Trả sách" />
             <Button layoutX="53.0" layoutY="380.0" mnemonicParsing="false" onAction="#CheckBook" text="Thống kê sách" />
             <Label fx:id="nameLabel" layoutX="48.0" layoutY="33.0" text="Chào Mừng" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Button layoutX="72.0" layoutY="542.0" mnemonicParsing="false" onAction="#Logout" text="Logout" />
+            <Button layoutX="72.0" layoutY="558.0" mnemonicParsing="false" onAction="#Logout" text="Logout" />
+            <ImageView fitHeight="40.0" fitWidth="30.0" layoutX="87.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/login-icon-2048x1842-wrugek0l.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <Text layoutX="450.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sách có sẵn">
