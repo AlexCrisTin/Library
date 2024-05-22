@@ -27,11 +27,16 @@
         </columns>
       </TableView>
       <Button layoutX="421.0" layoutY="560.0" mnemonicParsing="false" onAction="#check" text="Đã trả" />
-      <TextField fx:id="search" layoutX="671.0" layoutY="47.0" />
-      <Text layoutX="605.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tìm MSSV" />
-      <ImageView fitHeight="60.0" fitWidth="35.0" layoutX="824.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="search" layoutX="148.0" layoutY="47.0" />
+      <Text layoutX="85.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tìm MSSV" />
+      <ImageView fitHeight="60.0" fitWidth="35.0" layoutX="306.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/pngtree-magnifying-glass-flat-icon-png-image_9055466.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="74.0" layoutX="807.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/4901662.png" />
          </image>
       </ImageView>
    </children>
