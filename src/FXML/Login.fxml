@@ -28,7 +28,17 @@
       <Text layoutX="174.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tài khoản" />
       <TextField fx:id="usernameField" layoutX="243.0" layoutY="153.0" />
       <Text layoutX="174.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mật khẩu" />
-      <Button layoutX="281.0" layoutY="267.0" mnemonicParsing="false" onAction="#Login" text="login" />
+      <Button layoutX="294.0" layoutY="258.0" mnemonicParsing="false" onAction="#Login" text="login" />
       <PasswordField fx:id="passwordField" layoutX="244.0" layoutY="208.0" />
+      <ImageView fitHeight="40.0" fitWidth="30.0" layoutX="403.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/620.9-login-icon-iconbunny.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="30.0" layoutX="403.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/11864810.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
