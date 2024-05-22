@@ -60,5 +60,10 @@
             <Image url="@../icon/days.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="193.0" fitWidth="20.0" layoutX="408.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/warning_115257.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
